@@ -6,11 +6,12 @@ package net.awaken.server.domain.entity.resource;
 public interface Gadget extends Resource {
 
     /**
-     * get division.
+     * get option.
      *
-     * @return division
+     * @return option
+     * @see net.awaken.server.domain.constant.GadgetOption
      */
-    Integer getDivision();
+    Integer getOption();
 
     Module getModule();
 
