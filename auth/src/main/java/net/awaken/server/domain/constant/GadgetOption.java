@@ -11,6 +11,7 @@ public enum GadgetOption implements Suitable {
      * Server Service.
      * ps:
      * Document Upload & Download can be also as a kind of service.
+     * login as well.
      */
     Service(20),
     /**
