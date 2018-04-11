@@ -1,11 +1,14 @@
 package net.awaken.server.domain.entity.permission;
 
+import net.awaken.server.domain.entity.resource.Module;
 import net.awaken.server.domain.entity.subject.Subject;
 
 import java.util.Set;
 
 /**
  * 角色
+ * <p>
+ * every role contains permissions,which may be cross module or aggregation.
  */
 public interface Role {
 
@@ -22,6 +25,21 @@ public interface Role {
      * @param subject
      */
     void revoke(Subject subject);
+
+    /**
+     * get related module's privilege.
+     *
+     * @param module
+     * @return privilege
+     */
+    Privilege getPrivilege(Module module);
+
+    /**
+     * get privileges concerned.
+     *
+     * @return privileges
+     */
+    Set<Privilege> getPrivileges();
 
     /**
      * 权限

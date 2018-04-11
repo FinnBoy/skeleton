@@ -1,6 +1,6 @@
 package net.awaken.server.domain.entity.permission;
 
-import net.awaken.server.domain.entity.resource.Resource;
+import net.awaken.server.domain.entity.resource.Gadget;
 
 /**
  * 权限
@@ -24,9 +24,9 @@ public interface Permission {
     Integer getDecision();
 
     /**
-     * get resource.
+     * get gadget.
      *
-     * @return resource
+     * @return gadget
      */
-    Resource getResource();
+    Gadget getGadget();
 }

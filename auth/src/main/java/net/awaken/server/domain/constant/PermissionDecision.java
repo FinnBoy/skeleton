@@ -5,7 +5,7 @@ package net.awaken.server.domain.constant;
  */
 public enum PermissionDecision implements Suitable {
     /**
-     *
+     * note: deny's priority > authorize's priority.
      */
     Deny(0),
     /**
