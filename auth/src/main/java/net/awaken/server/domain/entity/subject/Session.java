@@ -1,30 +1,30 @@
 package net.awaken.server.domain.entity.subject;
 
-import net.awaken.server.domain.entity.permission.Privilege;
-import net.awaken.server.domain.entity.resource.Module;
-
-import java.util.Set;
+import net.awaken.server.domain.constant.PermissionAction;
+import net.awaken.server.domain.entity.resource.Gadget;
 
 public interface Session {
+
+    /**
+     * get user.
+     *
+     * @return user
+     */
+    User getUser();
 
     /**
      * get principal.
      *
      * @return principal
      */
-    Principal getPrincipal();
+    Principal runAs();
 
     /**
-     * get module.
+     * verify permission.
      *
-     * @return module
+     * @param action
+     * @param gadget
+     * @return
      */
-    Module getModule();
-
-    /**
-     * get activate privileges concerned.
-     *
-     * @return privileges
-     */
-    Set<Privilege> getPrivileges();
+    boolean verify(PermissionAction action, Gadget gadget);
 }
