@@ -1,8 +1,5 @@
 package net.awaken.server.domain.entity.subject;
 
-import net.awaken.server.domain.entity.permission.Privilege;
-import net.awaken.server.domain.entity.resource.Module;
-
 import java.util.Set;
 
 /**
@@ -30,14 +27,6 @@ public interface Principal extends Subject {
      * @return groups
      */
     Set<Group> getGroups();
-
-    /**
-     * get related module's privilege.
-     *
-     * @param module
-     * @return privilege
-     */
-    Privilege getPrivilege(Module module);
 
     /**
      * 属于该部门的人员

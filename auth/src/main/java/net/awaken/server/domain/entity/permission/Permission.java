@@ -1,6 +1,5 @@
 package net.awaken.server.domain.entity.permission;
 
-import net.awaken.server.domain.constant.PermissionAction;
 import net.awaken.server.domain.entity.resource.Gadget;
 
 /**
@@ -30,13 +29,4 @@ public interface Permission {
      * @return gadget
      */
     Gadget getGadget();
-
-    /**
-     * verify permission.
-     *
-     * @param action
-     * @param gadget
-     * @return
-     */
-    boolean verify(PermissionAction action, Gadget gadget);
 }

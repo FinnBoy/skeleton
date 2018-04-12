@@ -5,16 +5,11 @@ import net.awaken.server.domain.entity.resource.Module;
 import java.util.Set;
 
 /**
- * this role's all permissions by module level.
+ * permissions by module level.
+ * <p>
+ * <b>Value Object</b>
  */
 public interface Privilege {
-
-    /**
-     * get role.
-     *
-     * @return role
-     */
-    Role getRole();
 
     /**
      * get module.
@@ -28,5 +23,5 @@ public interface Privilege {
      *
      * @return permissions
      */
-    Set<Permission> getAllPermissions();
+    Set<Permission> getPermissions();
 }

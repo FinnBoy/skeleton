@@ -1,6 +1,5 @@
 package net.awaken.server.domain.entity.permission;
 
-import net.awaken.server.domain.entity.resource.Module;
 import net.awaken.server.domain.entity.subject.Subject;
 
 import java.util.Set;
@@ -13,48 +12,11 @@ import java.util.Set;
 public interface Role {
 
     /**
-     * grant role to subject.
-     *
-     * @param subject
-     */
-    void grant(Subject subject);
-
-    /**
-     * revoke role from subject.
-     *
-     * @param subject
-     */
-    void revoke(Subject subject);
-
-    /**
-     * get related module's privilege.
-     *
-     * @param module
-     * @return privilege
-     */
-    Privilege getPrivilege(Module module);
-
-    /**
-     * get privileges concerned.
-     *
-     * @return privileges
-     */
-    Set<Privilege> getPrivileges();
-
-    /**
      * 权限
      *
      * @return permissions
      */
     Set<Permission> getPermissions();
-
-    /**
-     * 依赖的角色（拥有当前角色的前提：必须先行拥有依赖角色）
-     * <p>禁止互相依赖造成死循环</p>
-     *
-     * @return dependencies
-     */
-    Set<Role> getDependencies();
 
     /**
      * 包含的角色
@@ -71,11 +33,19 @@ public interface Role {
     Role getAncestor();
 
     /**
+     * 依赖的角色（拥有当前角色的前提：必须先行拥有依赖角色）
+     * <p>禁止互相依赖造成死循环</p>
+     *
+     * @return dependencies
+     */
+    Set<Role> getDependencies();
+
+    /**
      * 互斥角色
      *
      * @return repulsion
      */
-    Set<Role> getRepulsion();
+    Set<Role> getRepulsions();
 
     /**
      * 角色可被分配的配额
@@ -83,4 +53,34 @@ public interface Role {
      * @return quota
      */
     Integer getQuota();
+
+    /**
+     * can grant permission to someone.
+     *
+     * @return
+     */
+    Boolean isGrantor();
+
+    /**
+     * get 角色类型
+     *
+     * @return mode
+     * @see net.awaken.server.domain.constant.RoleOption
+     */
+    Integer getOption();
+
+    /**
+     * grant role to subject.
+     *
+     * @param subject
+     */
+    void grant(Subject subject);
+
+    /**
+     * revoke role from subject.
+     *
+     * @param subject
+     */
+    void revoke(Subject subject);
+
 }
