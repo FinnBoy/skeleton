@@ -62,6 +62,13 @@ public interface Role {
     Boolean isGrantor();
 
     /**
+     * whether locked or not.
+     *
+     * @return locked
+     */
+    Boolean isLocked();
+
+    /**
      * get 角色类型
      *
      * @return mode

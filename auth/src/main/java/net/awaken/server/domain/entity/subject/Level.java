@@ -1,13 +1,18 @@
 package net.awaken.server.domain.entity.subject;
 
+import net.awaken.server.domain.entity.permission.Role;
+
+/**
+ * 每个 level 都有一个 role，而且是 container role.
+ */
 public interface Level {
 
     /**
-     * get subjectDivision.
+     * get subject option.
      *
-     * @return subjectDivision
+     * @return subject option
      */
-    Integer getSubjectDivision();
+    Integer getSubjectOption();
 
     /**
      * get grade.
@@ -15,6 +20,13 @@ public interface Level {
      * @return grade
      */
     Integer getGrade();
+
+    /**
+     * get role by level.
+     *
+     * @return role
+     */
+    Role getRole();
 
     /**
      * get roleQuota.
