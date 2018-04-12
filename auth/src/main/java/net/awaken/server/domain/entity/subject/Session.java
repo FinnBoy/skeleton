@@ -40,6 +40,7 @@ public interface Session {
 
     /**
      * get 最近操作时间
+     * TODO: 另建 User Operation Log，由此表维护？
      *
      * @return last operation datetime
      */

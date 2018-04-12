@@ -33,6 +33,7 @@ public interface Subject {
 
     /**
      * validate if has the permission of this resource.
+     * TODO: is it necessary to put this method here?
      *
      * @param resource
      * @return true if have permission of this resource, or not.
