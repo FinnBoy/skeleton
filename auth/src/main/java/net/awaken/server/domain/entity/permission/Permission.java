@@ -1,11 +1,12 @@
 package net.awaken.server.domain.entity.permission;
 
+import net.awaken.domain.Entity;
 import net.awaken.server.domain.entity.resource.Gadget;
 
 /**
  * 权限
  */
-public interface Permission {
+public interface Permission extends Entity<Long> {
 
     /**
      * enum: read, insert, update, delete, execute

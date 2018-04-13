@@ -1,5 +1,6 @@
 package net.awaken.server.domain.entity.subject;
 
+import net.awaken.domain.Entity;
 import net.awaken.server.domain.entity.permission.Role;
 import net.awaken.server.domain.entity.resource.Module;
 
@@ -8,7 +9,7 @@ import java.util.Date;
 /**
  * once login, once session.
  */
-public interface Session {
+public interface Session extends Entity<Long> {
 
     /**
      * get user.

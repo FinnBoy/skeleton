@@ -1,11 +1,12 @@
 package net.awaken.server.domain.entity.subject;
 
+import net.awaken.domain.Entity;
 import net.awaken.server.domain.entity.permission.Role;
 
 /**
  * 每个 level 都有一个 role，而且是 container role.
  */
-public interface Level {
+public interface Level extends Entity<Long> {
 
     /**
      * get subject option.

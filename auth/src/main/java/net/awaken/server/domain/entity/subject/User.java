@@ -1,12 +1,14 @@
 package net.awaken.server.domain.entity.subject;
 
+import net.awaken.domain.Entity;
+
 import java.util.Date;
 import java.util.Set;
 
 /**
  *
  */
-public interface User {
+public interface User extends Entity<Long> {
 
     /**
      * get principal.

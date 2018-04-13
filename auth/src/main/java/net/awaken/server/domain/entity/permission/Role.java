@@ -1,5 +1,6 @@
 package net.awaken.server.domain.entity.permission;
 
+import net.awaken.domain.Entity;
 import net.awaken.server.domain.entity.subject.Subject;
 
 import java.util.Set;
@@ -9,7 +10,7 @@ import java.util.Set;
  * <p>
  * every role contains permissions,which may be cross module or aggregation.
  */
-public interface Role {
+public interface Role extends Entity<Long> {
 
     /**
      * 权限

@@ -1,5 +1,6 @@
 package net.awaken.server.domain.entity.subject;
 
+import net.awaken.domain.Entity;
 import net.awaken.server.domain.entity.permission.Role;
 import net.awaken.server.domain.entity.resource.Resource;
 
@@ -8,7 +9,7 @@ import java.util.Set;
 /**
  * 主体
  */
-public interface Subject {
+public interface Subject extends Entity<Long> {
 
     /**
      * get Level.
