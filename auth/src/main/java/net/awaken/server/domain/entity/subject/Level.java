@@ -11,6 +11,7 @@ public interface Level {
      * get subject option.
      *
      * @return subject option
+     * @see net.awaken.server.domain.constant.SubjectOption
      */
     Integer getSubjectOption();
 

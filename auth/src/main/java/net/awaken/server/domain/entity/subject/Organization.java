@@ -5,6 +5,12 @@ package net.awaken.server.domain.entity.subject;
  */
 public interface Organization {
 
-    Integer getForm();
+    /**
+     * get pattern.
+     *
+     * @return pattern
+     * @see net.awaken.server.domain.constant.OrganizationPattern
+     */
+    Integer getPattern();
 
 }
