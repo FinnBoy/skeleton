@@ -5,7 +5,7 @@ package net.awaken.domain;
  */
 public interface Factory<T extends Entity> {
 
-    T create();
+    T create(Criteria criteria);
 
     T reconstitute();
 }
