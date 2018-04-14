@@ -1,7 +1,6 @@
 package net.awaken.server.domain.entity.permission;
 
-import net.awaken.domain.Entity;
-import net.awaken.server.domain.entity.subject.Subject;
+import net.awaken.server.domain.entity.AuthEntity;
 
 import java.util.Set;
 
@@ -10,7 +9,7 @@ import java.util.Set;
  * <p>
  * every role contains permissions,which may be cross module or aggregation.
  */
-public interface Role extends Entity<Long> {
+public interface Role extends AuthEntity<Long> {
 
     /**
      * 权限
@@ -76,19 +75,4 @@ public interface Role extends Entity<Long> {
      * @see net.awaken.server.domain.constant.RoleOption
      */
     Integer getOption();
-
-    /**
-     * grant role to subject.
-     *
-     * @param subject
-     */
-    void grant(Subject subject);
-
-    /**
-     * revoke role from subject.
-     *
-     * @param subject
-     */
-    void revoke(Subject subject);
-
 }

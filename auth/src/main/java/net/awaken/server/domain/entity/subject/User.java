@@ -1,6 +1,6 @@
 package net.awaken.server.domain.entity.subject;
 
-import net.awaken.domain.Entity;
+import net.awaken.server.domain.entity.AuthEntity;
 
 import java.util.Date;
 import java.util.Set;
@@ -8,7 +8,7 @@ import java.util.Set;
 /**
  *
  */
-public interface User extends Entity<Long> {
+public interface User extends AuthEntity<Long> {
 
     /**
      * get principal.

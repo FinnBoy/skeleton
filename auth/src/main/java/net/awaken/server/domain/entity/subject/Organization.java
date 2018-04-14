@@ -1,11 +1,11 @@
 package net.awaken.server.domain.entity.subject;
 
-import net.awaken.domain.Entity;
+import net.awaken.server.domain.entity.AuthEntity;
 
 /**
  * 组织
  */
-public interface Organization extends Entity<Long> {
+public interface Organization extends AuthEntity<Long> {
 
     /**
      * get pattern.

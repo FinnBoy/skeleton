@@ -1,11 +1,11 @@
 package net.awaken.server.domain.entity.subject;
 
-import net.awaken.domain.Entity;
+import net.awaken.server.domain.entity.AuthEntity;
 
 /**
  * 凭证
  */
-public interface Credential extends Entity<Long> {
+public interface Credential extends AuthEntity<Long> {
 
     User getUser();
 
