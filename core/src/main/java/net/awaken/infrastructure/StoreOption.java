@@ -21,7 +21,7 @@ public enum StoreOption {
      */
     Ftp,
     /**
-     *
+     * Customized RPC
      */
     Rpc;
 }
