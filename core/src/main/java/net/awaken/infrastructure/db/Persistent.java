@@ -3,9 +3,9 @@ package net.awaken.infrastructure.db;
 import java.io.Serializable;
 
 /**
- * 持久化对象
+ * Persistent Object.
  */
-public interface Persistent<ID extends Serializable> extends Serializable {
+public interface Persistent<ID extends Serializable> extends Data {
 
     ID getId();
 
