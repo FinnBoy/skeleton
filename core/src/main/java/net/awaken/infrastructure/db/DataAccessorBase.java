@@ -2,6 +2,6 @@ package net.awaken.infrastructure.db;
 
 import java.io.Serializable;
 
-public abstract class DataAccessorBase<ID extends Serializable, P extends Persistent<ID>> implements DataAccessor<ID, P> {
+public abstract class DataAccessorBase<K extends Serializable, P extends Persistent<K>> implements DataAccessor<K, P> {
 
 }
