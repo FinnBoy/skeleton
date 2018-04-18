@@ -1,14 +1,16 @@
 package net.awaken.infrastructure.db;
 
+import java.io.Closeable;
 import java.io.Serializable;
+import java.sql.Connection;
 import java.util.List;
 
 /**
- * DB Common Access API.
+ * DB Session.
  *
  * @author Finn Zhao
  */
-public interface DataStore {
+public interface DataSession extends Closeable {
 
     <ID extends Serializable, T extends Persistent<ID>> ID save(T persistent) throws DataException;
 
@@ -47,4 +49,24 @@ public interface DataStore {
 
     String literal(String statement, Restriction restriction) throws DataException;
 
+    void commit();
+
+    void commit(boolean force);
+
+    void rollback();
+
+    void rollback(boolean force);
+
+    /**
+     * Closes the session
+     */
+    @Override
+    void close();
+
+    /**
+     * Retrieves inner database connection
+     *
+     * @return Connection
+     */
+    Connection getConnection();
 }
