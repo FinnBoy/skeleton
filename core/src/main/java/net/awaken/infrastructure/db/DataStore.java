@@ -5,6 +5,9 @@ import java.util.List;
 
 /**
  * DB Common Access API.
+ * <p>
+ * thread-safe
+ * </p>
  *
  * @author Finn Zhao
  */
