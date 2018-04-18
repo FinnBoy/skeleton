@@ -3,20 +3,35 @@ package net.awaken.infrastructure.db;
 import java.io.Serializable;
 import java.util.List;
 
-public interface DataAccessor<ID extends Serializable, P extends Persistent<ID>> {
+/**
+ * DB Data Access Object interface.
+ *
+ * @param <K> ID
+ * @param <T> Table
+ * @author Finn Zhao
+ */
+public interface DataAccessor<K extends Serializable, T extends Persistent<K>> {
 
-    void save(P persistent);
+    K save(T persistent) throws DataException;
 
-    void update(P persistent);
+    void alter(T persistent) throws DataException;
 
-    void delete(P persistent);
+    void drop(T persistent) throws DataException;
 
-    P load(ID id);
+    boolean insert(T persistent) throws DataException;
 
-    P get(ID id);
+    boolean update(T persistent) throws DataException;
 
-    P single(Restriction restriction);
+    boolean delete(T persistent) throws DataException;
 
-    List<P> list(Restriction restriction);
+    T load(K id) throws DataException;
+
+    T get(K id) throws DataException;
+
+    T single(Restriction restriction) throws DataException;
+
+    List<T> list(Restriction restriction) throws DataException;
+
+    List<T> list(Restriction restriction, RowBounds rowBounds) throws DataException;
 
 }
