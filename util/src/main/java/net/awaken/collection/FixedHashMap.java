@@ -20,38 +20,43 @@ public class FixedHashMap {
 
     public FixedHashMap(String[] keys, Integer[] values) {
 
-        this.keys = keys;
-        this.values = values;
-
+        // 1. Check
         if (keys == null) {
             throw new RuntimeException("");
         }
 
         int kSize = keys.length;
-        Integer[] vals = values;
+
+        for (int i = 0; i < kSize; i++) {
+            if (keys[i] == null) {
+                throw new RuntimeException("");
+            }
+        }
 
         if (values != null) {
             int vSize = values.length;
             if (kSize != vSize) {
                 throw new RuntimeException("");
             }
-            for (int i = 0; i < kSize; i++) {
-                if (keys[i] == null) {
-                    throw new RuntimeException("");
-                }
-            }
             for (int i = 0; i < vSize; i++) {
                 if (values[i] == null) {
                     throw new RuntimeException("");
                 }
             }
-        } else {
+        }
+
+        // 2. Set
+        Integer[] vals = values;
+
+        if (values == null) {
             vals = new Integer[kSize];
             for (int i = 0; i < kSize; i++) {
                 vals[i] = i;
             }
         }
 
+        this.keys = keys;
+        this.values = values;
         this.size = kSize;
         this.sameHashEntries = new SameHashEntry[this.size];
 
