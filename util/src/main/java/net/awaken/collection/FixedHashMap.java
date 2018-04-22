@@ -93,7 +93,7 @@ public class FixedHashMap {
         final int hash = this.hash(key);
         final int location = this.location(hash);
         final SameHashEntry sameHashEntry = this.sameHashEntries[location];
-        if (sameHashEntry == null || location != sameHashEntry.getLocation()) {
+        if (sameHashEntry == null) {
             return null;
         }
         final Entry[] entries = sameHashEntry.getEntries();
