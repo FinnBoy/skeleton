@@ -8,7 +8,7 @@ import java.util.*;
  *
  * @author Finn Zhao
  */
-public class FixedHashMap {
+public class FixedIntMap {
 
     private final String[] keys;
 
@@ -18,53 +18,60 @@ public class FixedHashMap {
 
     private final SameHashEntry[] sameHashEntries;
 
-    public FixedHashMap(String[] keys, Integer[] values) {
-
-        // 1. Check
+    /**
+     * check
+     *
+     * @param keys   literals
+     * @param values int values
+     */
+    private void validate(String[] keys, Integer[] values) {
         if (keys == null) {
-            throw new RuntimeException("");
+            throw new IllegalArgumentException("cause: keys is null");
         }
 
-        int kSize = keys.length;
-
-        for (int i = 0; i < kSize; i++) {
-            if (keys[i] == null) {
-                throw new RuntimeException("");
+        for (String key : keys) {
+            if (key == null) {
+                throw new IllegalArgumentException("cause: keys item is null");
             }
         }
 
         if (values != null) {
-            int vSize = values.length;
-            if (kSize != vSize) {
-                throw new RuntimeException("");
+            if (keys.length != values.length) {
+                throw new IllegalArgumentException("cause: keys length != values length");
             }
-            for (int i = 0; i < vSize; i++) {
-                if (values[i] == null) {
-                    throw new RuntimeException("");
+            for (Integer value : values) {
+                if (value == null) {
+                    throw new IllegalArgumentException("cause: values item is null");
                 }
             }
         }
 
-        // 2. Set
+    }
+
+    /**
+     * set
+     *
+     * @param keys   literals
+     * @param values int values
+     */
+    private void init(String[] keys, Integer[] values) {
+
         Integer[] vals = values;
 
         if (values == null) {
-            vals = new Integer[kSize];
-            for (int i = 0; i < kSize; i++) {
+            int len = keys.length;
+            vals = new Integer[len];
+            for (int i = 0; i < len; i++) {
                 vals[i] = i;
             }
         }
 
-        this.keys = keys;
-        this.values = values;
-        this.size = kSize;
-        this.sameHashEntries = new SameHashEntry[this.size];
-
+        int len = keys.length;
 
         int hash;
         int location;
         SameHashEntry sameHashEntry;
-        for (int i = 0; i < kSize; i++) {
+        for (int i = 0; i < len; i++) {
             hash = this.hash(keys[i]);
             location = this.location(hash);
             if (sameHashEntries[location] == null) {
@@ -74,7 +81,7 @@ public class FixedHashMap {
             sameHashEntry.add(new Entry(keys[i], vals[i], hash));
         }
 
-        for (int i = 0; i < kSize; i++) {
+        for (int i = 0; i < len; i++) {
             sameHashEntry = sameHashEntries[i];
             if (sameHashEntry == null) {
                 continue;
@@ -83,11 +90,45 @@ public class FixedHashMap {
         }
     }
 
+    public FixedIntMap(Map<String, Integer> map) {
+        if (map == null) {
+            throw new IllegalArgumentException("cause: map is null");
+        }
+        int size = map.size();
+        String[] keys = map.keySet().toArray(new String[size]);
+        Integer[] values = map.values().toArray(new Integer[size]);
+
+        // 1. Check
+        this.validate(keys, values);
+
+        // 2. Set
+        this.keys = keys;
+        this.values = values;
+        this.size = keys.length;
+        this.sameHashEntries = new SameHashEntry[this.size];
+
+        this.init(keys, values);
+    }
+
+    public FixedIntMap(String[] keys, Integer[] values) {
+
+        // 1. Check
+        this.validate(keys, values);
+
+        // 2. Set
+        this.keys = keys;
+        this.values = values;
+        this.size = keys.length;
+        this.sameHashEntries = new SameHashEntry[this.size];
+
+        this.init(keys, values);
+    }
+
     /**
      * get int value.
      *
-     * @param key
-     * @return
+     * @param key literals
+     * @return int value
      */
     public Integer get(String key) {
         final int hash = this.hash(key);
@@ -97,9 +138,7 @@ public class FixedHashMap {
             return null;
         }
         final Entry[] entries = sameHashEntry.getEntries();
-        Entry entry;
-        for (int i = 0, size = entries.length; i < size; i++) {
-            entry = entries[i];
+        for (Entry entry : entries) {
             if (entry.getKey().equals(key)) {
                 return entry.getValue();
             }
@@ -134,14 +173,14 @@ public class FixedHashMap {
 
     private class SameHashEntry {
 
-        public SameHashEntry(int location) {
+        SameHashEntry(int location) {
             this.location = location;
             this.entries = null;
             this.fixed = false;
             this.initEntries = new LinkedList<Entry>();
         }
 
-        public SameHashEntry(SameHashEntry sameHashEntry) {
+        SameHashEntry(SameHashEntry sameHashEntry) {
             int size = sameHashEntry.initEntries.size();
             this.location = sameHashEntry.getLocation();
             this.entries = sameHashEntry.initEntries.toArray(new Entry[size]);
@@ -156,32 +195,32 @@ public class FixedHashMap {
 
         private List<Entry> initEntries;
 
-        public SameHashEntry fixed() {
+        SameHashEntry fixed() {
             if (this.fixed) {
                 throw new RuntimeException("");
             }
             return new SameHashEntry(this);
         }
 
-        public void add(Entry entry) {
+        void add(Entry entry) {
             if (this.fixed) {
                 return;
             }
             this.initEntries.add(entry);
         }
 
-        public Entry[] getEntries() {
+        Entry[] getEntries() {
             return entries;
         }
 
-        public int getLocation() {
+        int getLocation() {
             return location;
         }
     }
 
     private class Entry {
 
-        public Entry(String key, Integer value, int hash) {
+        Entry(String key, Integer value, int hash) {
             this.key = key;
             this.value = value;
             this.hash = hash;
@@ -192,15 +231,15 @@ public class FixedHashMap {
 
         private final int hash;
 
-        public String getKey() {
+        String getKey() {
             return key;
         }
 
-        public Integer getValue() {
+        Integer getValue() {
             return value;
         }
 
-        public int getHash() {
+        int getHash() {
             return hash;
         }
 
