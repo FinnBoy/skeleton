@@ -1,5 +1,7 @@
 package net.awaken.infrastructure.db;
 
+import net.awaken.infrastructure.Identifiable;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -11,7 +13,7 @@ import java.util.List;
  *
  * @author Finn Zhao
  */
-public interface DataStore {
+public interface DataStore extends Identifiable {
 
     <ID extends Serializable, T extends Persistent<ID>> ID save(T persistent) throws DataException;
 
