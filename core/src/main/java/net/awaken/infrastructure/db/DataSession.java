@@ -24,9 +24,9 @@ public interface DataSession extends Closeable {
 
     boolean delete(Data persistent) throws DataException;
 
-    int execute(String statement) throws DataException;
+    int execute(String namedStatement) throws DataException;
 
-    int execute(String statement, Restriction restriction) throws DataException;
+    int execute(String namedStatement, Restriction restriction) throws DataException;
 
     <T extends Data> T load(Class<T> clazz, Serializable id) throws DataException;
 
@@ -38,16 +38,16 @@ public interface DataSession extends Closeable {
 
     <E extends Data> List<E> list(Class<E> clazz, Restriction restriction, RowBounds rowBounds) throws DataException;
 
-    <E extends Result> List<E> query(String statement, Class<E> clazz, Restriction restriction) throws DataException;
+    <E extends Result> List<E> query(String namedStatement, Class<E> clazz, Restriction restriction) throws DataException;
 
-    <E extends Result> List<E> query(String statement, Class<E> clazz, Restriction restriction, RowBounds rowBounds)
+    <E extends Result> List<E> query(String namedStatement, Class<E> clazz, Restriction restriction, RowBounds rowBounds)
             throws DataException;
 
-    <T extends Result> T seek(String statement, Class<T> clazz, Restriction restriction) throws DataException;
+    <T extends Result> T seek(String namedStatement, Class<T> clazz, Restriction restriction) throws DataException;
 
-    <T extends Number> T numeric(String statement, Class<T> clazz, Restriction restriction) throws DataException;
+    <T extends Number> T numeric(String namedStatement, Class<T> clazz, Restriction restriction) throws DataException;
 
-    String literal(String statement, Restriction restriction) throws DataException;
+    String literal(String namedStatement, Restriction restriction) throws DataException;
 
     void commit();
 

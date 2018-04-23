@@ -14,4 +14,12 @@ public interface DataSessionHolder {
      * @return data session
      */
     DataSession get(DataService dataService);
+
+    /**
+     * push in.
+     *
+     * @param dataService DB server mapping
+     * @param dataSession logic API of DB Connection
+     */
+    void put(DataService dataService, DataSession dataSession);
 }
