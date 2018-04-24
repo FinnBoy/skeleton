@@ -27,6 +27,9 @@
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Data Source ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <lib.version.druid>1.0.20</lib.version.druid>
 
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Workflow ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <lib.version.osworkflow>2.7.0</lib.version.osworkflow>
+
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ORM Frame ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <lib.version.hibernate.4>4.2.21.Final</lib.version.hibernate.4>
         <lib.version.hibernate.3>3.3.2.GA</lib.version.hibernate.3>
@@ -174,6 +177,13 @@
                 <groupId>com.alibaba</groupId>
                 <artifactId>druid</artifactId>
                 <version>${lib.version.druid}</version>
+            </dependency>
+
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Workflow ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <dependency>
+                <groupId>opensymphony</groupId>
+                <artifactId>osworkflow</artifactId>
+                <version>${lib.version.osworkflow}</version>
             </dependency>
 
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ORM Frame ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
