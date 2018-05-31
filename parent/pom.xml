@@ -75,6 +75,9 @@
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Frame Integration ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <lib.version.i.mybatis.spring>1.2.5</lib.version.i.mybatis.spring>
 
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Ajax For Java ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <lib.version.dwr>3.0.2-RELEASE</lib.version.dwr>
+
     </properties>
 
     <dependencyManagement>
@@ -426,6 +429,13 @@
                 <groupId>org.mybatis</groupId>
                 <artifactId>mybatis-spring</artifactId>
                 <version>${lib.version.i.mybatis.spring}</version>
+            </dependency>
+
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Ajax For Java ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <dependency>
+                <groupId>org.directwebremoting</groupId>
+                <artifactId>dwr</artifactId>
+                <version>${lib.version.dwr}</version>
             </dependency>
 
         </dependencies>
