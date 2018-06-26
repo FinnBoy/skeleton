@@ -12,6 +12,10 @@ import net.awaken.core.HandlerResult;
  */
 public class DefaultHandlerChain extends HandlerChainBase {
 
+    public DefaultHandlerChain() {
+        this.setDispatcherFactory(new DefaultDispatcherFactory());
+    }
+
     @Override
     public void proceed(Dispatcher dispatcher) {
         int size = this.getHandlerSize();
