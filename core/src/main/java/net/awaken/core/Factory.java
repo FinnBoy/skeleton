@@ -5,7 +5,6 @@ package net.awaken.core;
  * @version 1.0
  * @since 06.24.2018
  */
-public interface Bean extends Wrapped {
+public interface Factory {
 
-    boolean wrapped();
 }

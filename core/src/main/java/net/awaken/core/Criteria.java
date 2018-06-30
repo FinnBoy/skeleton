@@ -7,6 +7,6 @@ package net.awaken.core;
  * @version 1.0
  * @since 06.24.2018
  */
-public interface HandlerCriteria extends Bean {
+public interface Criteria extends Bean {
 
 }

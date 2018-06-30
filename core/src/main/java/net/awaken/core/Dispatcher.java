@@ -16,9 +16,11 @@ public interface Dispatcher {
      */
     void increase(HandlerChain chain);
 
-    HandlerCriteria getCriteria();
+    Criteria getCriteria();
 
-    HandlerResult getResult();
+    Result getResult();
 
-    void setResult(HandlerResult result);
+    <T> void wrapResult(T result);
+
+    void setResult(Result result);
 }

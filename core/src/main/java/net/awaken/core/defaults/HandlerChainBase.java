@@ -11,8 +11,6 @@ public abstract class HandlerChainBase implements HandlerChain {
 
     protected Handler[] handlers;
 
-    protected DispatcherFactory dispatcherFactory;
-
     @Override
     public int getHandlerSize() {
         return this.handlers == null ? 0 : this.handlers.length;
@@ -22,11 +20,5 @@ public abstract class HandlerChainBase implements HandlerChain {
         this.handlers = handlers;
     }
 
-    public void setDispatcherFactory(DispatcherFactory dispatcherFactory) {
-        this.dispatcherFactory = dispatcherFactory;
-    }
-
-    protected Dispatcher createDispatcher(HandlerCriteria criteria) {
-        return this.dispatcherFactory.create(criteria);
-    }
+    abstract protected Dispatcher createDispatcher(Criteria criteria);
 }

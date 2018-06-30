@@ -5,7 +5,11 @@ package net.awaken.core;
  * @version 1.0
  * @since 06.24.2018
  */
-public interface Wrapped<T> {
+public interface Wrapped {
 
-    T getWrapped();
+    Object getWrapped();
+
+    Class<?> getObjectType();
+
+    State.WrappedType getWrappedType();
 }

@@ -15,6 +15,6 @@ public interface HandlerChain {
 
     void proceed(Dispatcher dispatcher);
 
-    HandlerResult start(HandlerCriteria criteria);
+    Result start(Criteria criteria);
 
 }
