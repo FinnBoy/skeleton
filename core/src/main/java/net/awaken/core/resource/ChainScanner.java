@@ -7,7 +7,7 @@ import net.awaken.core.*;
  * @version 1.0
  * @since 06.24.2018
  */
-public class ChainScanner implements Scanner, Handler {
+public class ChainScanner extends ScannerBase implements Handler {
 
     private Scanner scanner;
 
@@ -21,39 +21,22 @@ public class ChainScanner implements Scanner, Handler {
     }
 
     @Override
-    public Resource[] seek(String[] locations) {
-        return this.scanner.seek(locations);
+    public Resource[] seekAll(String locationPattern) {
+        return this.scanner.seekAll(locationPattern);
     }
 
     @Override
     public void handle(Dispatcher dispatcher, HandlerChain chain) {
-
         Criteria criteria = dispatcher.getCriteria();
-
         if (isIllegal(criteria)) {
             throw new IllegalArgumentException("Criteria is not appropriate for Scanner.");
         }
-
-        if (isLiterals(criteria)) {
-            String location = this.getLocation(criteria);
-            Resource resource = this.seek(location);
-
-            if (resource != null) {
-                dispatcher.wrapResult(resource);
-                return;
-            }
+        String location = this.getLocation(criteria);
+        if (containsWildcard(location)) {
+            dispatcher.wrapResult(seekAll(location));
+        } else {
+            dispatcher.wrapResult(seek(location));
         }
-
-        if (isLiteralsArray(criteria)) {
-            String[] locations = this.getLocations(criteria);
-            Resource[] resources = this.seek(locations);
-
-            if (resources != null) {
-                dispatcher.wrapResult(resources);
-                return;
-            }
-        }
-
         chain.proceed(dispatcher);
     }
 
@@ -62,28 +45,10 @@ public class ChainScanner implements Scanner, Handler {
             return true;
         }
         State.WrappedType type = criteria.getWrappedType();
-        if (!State.WrappedType.LiteralsArray.equals(type) && !State.WrappedType.Literals.equals(type)) {
+        if (!State.WrappedType.Literals.equals(type)) {
             return true;
         }
         return false;
-    }
-
-    protected boolean isLiterals(Criteria criteria) {
-        if (State.WrappedType.Literals.equals(criteria.getWrappedType())) {
-            return true;
-        }
-        return false;
-    }
-
-    protected boolean isLiteralsArray(Criteria criteria) {
-        if (State.WrappedType.LiteralsArray.equals(criteria.getWrappedType())) {
-            return true;
-        }
-        return false;
-    }
-
-    private String[] getLocations(Criteria criteria) {
-        return (String[]) criteria.getWrapped();
     }
 
     private String getLocation(Criteria criteria) {
