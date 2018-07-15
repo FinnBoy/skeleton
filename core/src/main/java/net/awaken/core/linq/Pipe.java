@@ -78,10 +78,6 @@ public interface Pipe<T> {
 
     }
 
-    interface Integration<T, E, R> {
-        R merge(T main, E additional);
-    }
-
     interface Grouping<T> {
 
         Grouping<T> groupBy(Object field);
@@ -98,6 +94,11 @@ public interface Pipe<T> {
         void done();
     }
 
+    /**
+     * a property of the element used for sorting.
+     *
+     * @param <T> the type of the element
+     */
     interface Order<T> {
 
         int serial();
@@ -105,6 +106,17 @@ public interface Pipe<T> {
         Direction direction();
 
         Object field();
+    }
+
+    /**
+     * handle with the datas of two types, and set result to a new type.
+     *
+     * @param <T>
+     * @param <E>
+     * @param <R>
+     */
+    interface Integration<T, E, R> {
+        R merge(T main, E additional);
     }
 
     /**
