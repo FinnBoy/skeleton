@@ -58,23 +58,23 @@ public interface Pipe<T> {
 
     /** ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Inner Interface ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-    interface Joining<T, E> {
+    interface Joining<Main, Additional> {
 
-        T main();
+        Main main();
 
-        E additional();
+        Additional additional();
 
-        Joining<T, E> on(Object mainField, Object additionalField);
+        Joining<Main, Additional> on(Object mainField, Object additionalField);
 
-        Joining<T, E> configure();
+        Joining<Main, Additional> configure();
 
         boolean configured();
 
-        Joining<T, E> append(Collection<E> additional);
+        Joining<Main, Additional> append(Collection<Additional> additional);
 
-        Joining<T, E> append(Collection<T> main, Collection<E> additional);
+        Joining<Main, Additional> append(Collection<Main> main, Collection<Additional> additional);
 
-        <R> Pipe<R> map(Integration<T, E, R> integration);
+        <Result> Pipe<Result> map(Integration<Main, Additional, Result> integration);
 
     }
 
@@ -111,12 +111,12 @@ public interface Pipe<T> {
     /**
      * handle with the datas of two types, and set result to a new type.
      *
-     * @param <T>
-     * @param <E>
-     * @param <R>
+     * @param <Main>
+     * @param <Additional>
+     * @param <Result>
      */
-    interface Integration<T, E, R> {
-        R merge(T main, E additional);
+    interface Integration<Main, Additional, Result> {
+        Result merge(Main main, Additional additional);
     }
 
     /**
