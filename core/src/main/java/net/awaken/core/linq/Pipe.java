@@ -11,6 +11,18 @@ import java.util.Comparator;
  */
 public interface Pipe<T> {
 
+    Pipe<T> distinct(Property<T> property);
+
+    Pipe<T> distinct(Collection<Property<T>> property);
+
+    Pipe<T> filter(Restriction<? super T> predicate);
+
+    boolean anyMatch(Restriction<? super T> predicate);
+
+    boolean allMatch(Restriction<? super T> predicate);
+
+    boolean noneMatch(Restriction<? super T> predicate);
+
     /**
      * sort Collection according to the provided {@code Comparator}.
      *
@@ -31,7 +43,7 @@ public interface Pipe<T> {
      *
      * @return Proxy of the Generic
      */
-    T structure();
+    T struct();
 
     /**
      * start grouping operation.
@@ -64,7 +76,9 @@ public interface Pipe<T> {
 
         Additional additional();
 
-        Joining<Main, Additional> on(Object mainField, Object additionalField);
+        Joining<Main, Additional> on(Property<Main> mainField, Property<Additional> additionalField);
+
+        Joining<Main, Additional> mode(JoinMode joinMode);
 
         Joining<Main, Additional> configure();
 
@@ -80,9 +94,9 @@ public interface Pipe<T> {
 
     interface Grouping<T> {
 
-        Grouping<T> groupBy(Object field);
+        Grouping<T> groupBy(Property<T> field);
 
-        Grouping<T> aggregate(Object field);
+        Grouping<T> aggregate(Aggregate<T> field);
 
         void done();
     }
@@ -92,31 +106,6 @@ public interface Pipe<T> {
         Ordering<T> add(Order<T> order);
 
         void done();
-    }
-
-    /**
-     * a property of the element used for sorting.
-     *
-     * @param <T> the type of the element
-     */
-    interface Order<T> {
-
-        int serial();
-
-        Direction direction();
-
-        Object field();
-    }
-
-    /**
-     * handle with the datas of two types, and set result to a new type.
-     *
-     * @param <Main>
-     * @param <Additional>
-     * @param <Result>
-     */
-    interface Integration<Main, Additional, Result> {
-        Result merge(Main main, Additional additional);
     }
 
     /**
@@ -138,6 +127,29 @@ public interface Pipe<T> {
 
         public boolean isSame(Direction direction) {
             return this.direction == direction.val();
+        }
+    }
+
+    /**
+     * Join Mode: <tt>left join</tt> or <tt>right join</tt> or <tt>inner join</tt>.
+     */
+    enum JoinMode {
+        left(1),
+        right(-1),
+        inner(0);
+
+        private int mode;
+
+        JoinMode(int mode) {
+            this.mode = mode;
+        }
+
+        public int val() {
+            return this.mode;
+        }
+
+        public boolean isSame(JoinMode mode) {
+            return this.mode == mode.val();
         }
     }
 }
