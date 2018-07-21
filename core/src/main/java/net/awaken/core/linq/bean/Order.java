@@ -10,7 +10,7 @@ import net.awaken.core.linq.Pipe;
  * @version 1.0
  * @since 06.24.2018
  */
-public interface Order<Bean> extends Property<Bean> {
+public interface Order<Bean> {
 
     /**
      * serial number used for sorting.
@@ -26,5 +26,13 @@ public interface Order<Bean> extends Property<Bean> {
      * @see Pipe.Direction
      */
     Pipe.Direction direction();
+
+    /**
+     * return property of bean, which wrapped field info.
+     *
+     * @return property
+     * @see Property
+     */
+    Property<Bean> prop();
 
 }

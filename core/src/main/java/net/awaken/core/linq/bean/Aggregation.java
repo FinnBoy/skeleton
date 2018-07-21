@@ -10,7 +10,7 @@ package net.awaken.core.linq.bean;
  * @version 1.0
  * @since 06.24.2018
  */
-public interface Aggregation<Bean, Field> extends Property<Bean> {
+public interface Aggregation<Bean, Field> {
 
     /**
      * return a kind of operation on the concerned field while grouping.
@@ -18,4 +18,22 @@ public interface Aggregation<Bean, Field> extends Property<Bean> {
      * @return a kind of operation
      */
     Aggregator<Field> aggregator();
+
+    /**
+     * return property of bean, which wrapped field info.
+     *
+     * @return property
+     * @see Property
+     */
+    Property<Bean> prop();
+
+    /**
+     * @return the result after aggregating.
+     */
+    Field feedback();
+
+    /**
+     * @return size of bean for aggregating.
+     */
+    int count();
 }
