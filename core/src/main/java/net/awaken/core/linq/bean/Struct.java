@@ -1,6 +1,9 @@
 package net.awaken.core.linq.bean;
 
-import net.awaken.core.linq.Pipe;
+import net.awaken.core.linq.operation.Group;
+import net.awaken.core.linq.operation.Join;
+import net.awaken.core.linq.operation.Sort;
+import net.awaken.core.linq.operation.Union;
 
 /**
  * @param <Bean>
@@ -11,28 +14,66 @@ import net.awaken.core.linq.Pipe;
 public interface Struct<Bean> {
 
     /**
-     * @param field element's field
-     * @return property wrapper
+     * Grouping Operation.
+     *
+     * @return Group
+     * @see Group
      */
-    Property<Bean> of(Object field);
+    Group<Bean> group();
+
+    /**
+     * Sorting Operation.
+     *
+     * @return Sort
+     * @see Sort
+     */
+    Sort<Bean> sort();
+
+    /**
+     * Union Operation.
+     *
+     * @param bean         type of object
+     * @param <Additional> object as a record
+     * @return Union
+     * @see Union
+     */
+    <Additional> Union<Bean, Additional> union(Additional bean);
+
+    /**
+     * Union Operation.
+     *
+     * @param struct       struct of object
+     * @param <Additional> struct of object
+     * @return Union
+     * @see Union
+     */
+    <Additional> Union<Bean, Additional> union(Struct<Additional> struct);
+
+    /**
+     * Join Operation.
+     *
+     * @param bean         type of object
+     * @param <Additional> object as a record
+     * @return Join
+     * @see Join
+     */
+    <Additional> Join<Bean, Additional> join(Additional bean);
+
+    /**
+     * Join Operation.
+     *
+     * @param struct       struct of object
+     * @param <Additional> struct of object
+     * @return Join
+     * @see Join
+     */
+    <Additional> Join<Bean, Additional> join(Struct<Additional> struct);
 
     /**
      * @param field element's field
      * @return property wrapper
      */
-    <F> Aggregation<Bean, F> of(Object field, Aggregator<F> aggregator);
-
-    /**
-     * @param field element's field
-     * @return property order
-     */
-    Order<Bean> of(Object field, int serial);
-
-    /**
-     * @param field element's field
-     * @return property order
-     */
-    Order<Bean> of(Object field, int serial, Pipe.Direction direction);
+    Property<Bean> get(Object field);
 
     /**
      * @return the proxy of element
