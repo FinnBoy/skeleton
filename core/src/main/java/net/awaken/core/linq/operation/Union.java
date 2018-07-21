@@ -35,6 +35,8 @@ public interface Union<Left, Right> {
 
     Union<Left, Right> on(double leftField, double rightField);
 
+    Union<Left, Right> on(boolean leftField, boolean rightField);
+
     Union<Left, Right> on(Byte leftField, Byte rightField);
 
     Union<Left, Right> on(Character leftField, Character rightField);
@@ -48,6 +50,8 @@ public interface Union<Left, Right> {
     Union<Left, Right> on(Float leftField, Float rightField);
 
     Union<Left, Right> on(Double leftField, Double rightField);
+
+    Union<Left, Right> on(Boolean leftField, Boolean rightField);
 
     Union<Left, Right> on(BigInteger leftField, BigInteger rightField);
 
