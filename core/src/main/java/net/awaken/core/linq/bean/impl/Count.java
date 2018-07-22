@@ -1,4 +1,4 @@
-package net.awaken.core.linq.bean.internal;
+package net.awaken.core.linq.bean.impl;
 
 /**
  * @param <T> the type of the element

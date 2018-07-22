@@ -1,4 +1,4 @@
-package net.awaken.core.linq.bean.internal;
+package net.awaken.core.linq.bean.impl;
 
 /**
  * @param <T> the type of the element
@@ -6,13 +6,13 @@ package net.awaken.core.linq.bean.internal;
  * @version 1.0
  * @since 06.24.2018(1.5)
  */
-public class Max<T extends Comparable> extends AggregatorBase<T> {
+public class Min<T extends Comparable> extends AggregatorBase<T> {
 
     private T value;
 
     @Override
     public void execute(T val) {
-        if (value != null && value.compareTo(val) < 0) {
+        if (value != null && value.compareTo(val) > 0) {
             value = val;
         } else if (value == null) {
             value = val;

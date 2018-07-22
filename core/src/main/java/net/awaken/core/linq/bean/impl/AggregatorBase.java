@@ -1,4 +1,4 @@
-package net.awaken.core.linq.bean.internal;
+package net.awaken.core.linq.bean.impl;
 
 import net.awaken.core.linq.bean.Aggregator;
 

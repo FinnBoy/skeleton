@@ -1,4 +1,4 @@
-package net.awaken.core.linq.bean.internal;
+package net.awaken.core.linq.bean.impl;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
