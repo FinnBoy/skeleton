@@ -37,7 +37,7 @@ public interface Struct<Bean> {
      * @return Union
      * @see Union
      */
-    <Additional> Union<Bean, Additional> union(Additional bean);
+    <Additional> Union<Bean, Additional> union(Class<Additional> bean);
 
     /**
      * Union Operation.
@@ -57,7 +57,7 @@ public interface Struct<Bean> {
      * @return Join
      * @see Join
      */
-    <Additional> Join<Bean, Additional> join(Additional bean);
+    <Additional> Join<Bean, Additional> join(Class<Additional> bean);
 
     /**
      * Join Operation.
