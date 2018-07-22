@@ -1,6 +1,6 @@
 package net.awaken.core.linq.bean;
 
-import net.awaken.core.linq.Pipe;
+import net.awaken.core.linq.constant.Direction;
 
 /**
  * a property of the element used for sorting.
@@ -23,9 +23,9 @@ public interface Order<Bean> {
      * ascending or descending.
      *
      * @return direction
-     * @see Pipe.Direction
+     * @see Direction
      */
-    Pipe.Direction direction();
+    Direction direction();
 
     /**
      * return property of bean, which wrapped field info.

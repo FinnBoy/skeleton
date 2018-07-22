@@ -30,7 +30,7 @@ public interface Aggregation<Bean, Field> {
     /**
      * @return the result after aggregating.
      */
-    Field feedback();
+    Field get();
 
     /**
      * @return size of bean for aggregating.

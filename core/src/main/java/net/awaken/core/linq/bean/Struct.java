@@ -70,13 +70,30 @@ public interface Struct<Bean> {
     <Additional> Join<Bean, Additional> join(Struct<Additional> struct);
 
     /**
+     * @return the proxy of element
+     */
+    Bean get();
+
+    /**
      * @param field element's field
      * @return property wrapper
      */
     Property<Bean> get(Object field);
 
-    /**
-     * @return the proxy of element
-     */
-    Bean get();
+    Property<Bean> get(byte field);
+
+    Property<Bean> get(char field);
+
+    Property<Bean> get(short field);
+
+    Property<Bean> get(int field);
+
+    Property<Bean> get(long field);
+
+    Property<Bean> get(float field);
+
+    Property<Bean> get(double field);
+
+    Property<Bean> get(boolean field);
+
 }
