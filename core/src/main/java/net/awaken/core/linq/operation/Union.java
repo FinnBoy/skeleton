@@ -21,6 +21,12 @@ public interface Union<Left, Right> {
 
     Union<Left, Right> on(String leftField, String rightField);
 
+    Union<Left, Right> on(BigInteger leftField, BigInteger rightField);
+
+    Union<Left, Right> on(BigDecimal leftField, BigDecimal rightField);
+
+    Union<Left, Right> on(Date leftField, Date rightField);
+
     Union<Left, Right> on(byte leftField, byte rightField);
 
     Union<Left, Right> on(char leftField, char rightField);
@@ -52,11 +58,5 @@ public interface Union<Left, Right> {
     Union<Left, Right> on(Double leftField, Double rightField);
 
     Union<Left, Right> on(Boolean leftField, Boolean rightField);
-
-    Union<Left, Right> on(BigInteger leftField, BigInteger rightField);
-
-    Union<Left, Right> on(BigDecimal leftField, BigDecimal rightField);
-
-    Union<Left, Right> on(Date leftField, Date rightField);
 
 }

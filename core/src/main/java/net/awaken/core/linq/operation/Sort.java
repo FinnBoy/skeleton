@@ -1,6 +1,6 @@
 package net.awaken.core.linq.operation;
 
-import net.awaken.core.linq.Pipe;
+import net.awaken.core.linq.constant.Direction;
 
 /**
  * @param <Bean>
@@ -23,6 +23,38 @@ public interface Sort<Bean> {
      * @param direction order direction
      * @return self
      */
-    Sort<Bean> by(Object field, int serial, Pipe.Direction direction);
+    Sort<Bean> by(Object field, int serial, Direction direction);
+
+    Sort<Bean> by(byte field, int serial);
+
+    Sort<Bean> by(char field, int serial);
+
+    Sort<Bean> by(short field, int serial);
+
+    Sort<Bean> by(int field, int serial);
+
+    Sort<Bean> by(long field, int serial);
+
+    Sort<Bean> by(float field, int serial);
+
+    Sort<Bean> by(double field, int serial);
+
+    Sort<Bean> by(boolean field, int serial);
+
+    Sort<Bean> by(byte field, int serial, Direction direction);
+
+    Sort<Bean> by(char field, int serial, Direction direction);
+
+    Sort<Bean> by(short field, int serial, Direction direction);
+
+    Sort<Bean> by(int field, int serial, Direction direction);
+
+    Sort<Bean> by(long field, int serial, Direction direction);
+
+    Sort<Bean> by(float field, int serial, Direction direction);
+
+    Sort<Bean> by(double field, int serial, Direction direction);
+
+    Sort<Bean> by(boolean field, int serial, Direction direction);
 
 }

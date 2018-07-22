@@ -1,6 +1,6 @@
 package net.awaken.core.linq.operation;
 
-import net.awaken.core.linq.Pipe;
+import net.awaken.core.linq.constant.JoinMode;
 
 /**
  * @param <Left>
@@ -16,7 +16,7 @@ public interface Join<Left, Right> extends Union<Left, Right> {
      *
      * @return join mode
      */
-    Pipe.JoinMode mode();
+    JoinMode mode();
 
     /**
      * set join mode:<br/>
@@ -27,6 +27,6 @@ public interface Join<Left, Right> extends Union<Left, Right> {
      * @param joinMode
      * @return self
      */
-    Join<Left, Right> mode(Pipe.JoinMode joinMode);
+    Join<Left, Right> mode(JoinMode joinMode);
 
 }
