@@ -1,6 +1,7 @@
 package net.awaken.core.linq.operation;
 
 import net.awaken.core.linq.bean.Struct;
+import net.awaken.core.linq.operation.union.Merger;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
@@ -59,4 +60,5 @@ public interface Union<Left, Right> {
 
     Union<Left, Right> on(Boolean leftField, Boolean rightField);
 
+    <Result> Union<Left, Right> map(Merger<Left, Right, Result> merger);
 }
