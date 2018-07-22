@@ -15,5 +15,15 @@ package net.awaken.core.linq.bean;
  */
 public interface Aggregator<Field> {
 
-    Field process(Field value);
+    void process(Field value);
+
+    /**
+     * @return the result after aggregating.
+     */
+    Field get();
+
+    /**
+     * @return size of bean for aggregating.
+     */
+    int count();
 }

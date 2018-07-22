@@ -27,13 +27,4 @@ public interface Aggregation<Bean, Field> {
      */
     Property<Bean> prop();
 
-    /**
-     * @return the result after aggregating.
-     */
-    Field get();
-
-    /**
-     * @return size of bean for aggregating.
-     */
-    int count();
 }
