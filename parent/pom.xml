@@ -16,6 +16,8 @@
 
     <properties>
 
+        <lib.version.netty>4.1.9.Final</lib.version.netty>
+
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Web Server ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <lib.version.tomcat>7.0.59</lib.version.tomcat>
         <lib.version.tomcat.embed>7.0.59</lib.version.tomcat.embed>
@@ -85,6 +87,12 @@
 
     <dependencyManagement>
         <dependencies>
+
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${lib.version.netty}</version>
+            </dependency>
 
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Web Server ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <dependency>
