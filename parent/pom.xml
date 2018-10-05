@@ -88,6 +88,7 @@
     <dependencyManagement>
         <dependencies>
 
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Network Frame ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <dependency>
                 <groupId>io.netty</groupId>
                 <artifactId>netty-all</artifactId>
