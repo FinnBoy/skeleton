@@ -18,6 +18,12 @@
 
         <lib.version.netty>4.1.9.Final</lib.version.netty>
 
+        <!--
+          Log4j-2.9 and higher require disruptor-3.3.4.jar or higher on the classpath.
+          Prior to Log4j-2.9, disruptor-3.0.0.jar or higher was required.
+          -->
+        <lib.version.disruptor>3.4.2</lib.version.disruptor>
+
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Web Server ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <lib.version.tomcat>7.0.59</lib.version.tomcat>
         <lib.version.tomcat.embed>7.0.59</lib.version.tomcat.embed>
@@ -51,6 +57,8 @@
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Log Frame ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <lib.version.slf4j>1.6.1</lib.version.slf4j>
         <lib.version.logback>1.1.2</lib.version.logback>
+
+        <lib.version.log4j2>2.11.1</lib.version.log4j2>
         <lib.version.log4j2.24>2.4.1</lib.version.log4j2.24><!-- requires Java 7 -->
         <lib.version.log4j2.23>2.3</lib.version.log4j2.23><!-- requires Java 6 -->
         <lib.version.log4j>1.2.14</lib.version.log4j>
@@ -102,6 +110,13 @@
                 <groupId>io.netty</groupId>
                 <artifactId>netty-all</artifactId>
                 <version>${lib.version.netty}</version>
+            </dependency>
+
+            <!-- High Performance Inter-Thread Messaging Library -->
+            <dependency>
+                <groupId>com.lmax</groupId>
+                <artifactId>disruptor</artifactId>
+                <version>${lib.version.disruptor}</version>
             </dependency>
 
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Web Server ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -374,22 +389,22 @@
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-api</artifactId>
-                <version>${lib.version.log4j2.23}</version>
+                <version>${lib.version.log4j2}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-core</artifactId>
-                <version>${lib.version.log4j2.23}</version>
+                <version>${lib.version.log4j2}</version>
             </dependency>
             <dependency><!-- web project need it. -->
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-web</artifactId>
-                <version>${lib.version.log4j2.23}</version>
+                <version>${lib.version.log4j2}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.logging.log4j</groupId>
                 <artifactId>log4j-slf4j-impl</artifactId>
-                <version>${lib.version.log4j2.23}</version>
+                <version>${lib.version.log4j2}</version>
             </dependency>
 
             <!-- slf4j:integration with log4j -->
