@@ -67,4 +67,18 @@ public interface Subject extends Node<String, Subject> {
      */
     void revoke(Subject another, String role);
 
+    /**
+     * get sessions' count at present.
+     *
+     * @return session count
+     */
+    Integer getSessionCount();
+
+    /**
+     * terminate this session
+     *
+     * @param session
+     */
+    void terminate(String session);
+
 }

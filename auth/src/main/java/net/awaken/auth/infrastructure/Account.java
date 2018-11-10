@@ -19,6 +19,13 @@ public interface Account {
     Subject getSubject();
 
     /**
+     * TODO:
+     * @param credential
+     * @return true if valid.
+     */
+    boolean authenticate(Object credential);
+
+    /**
      * whether locked or not.
      *
      * @return locked
@@ -38,5 +45,19 @@ public interface Account {
      * @return expiry date
      */
     Date getExpiryDate();
+
+    /**
+     * get the config~time of the interval of session timeout.
+     *
+     * @return config~time
+     */
+    Integer getSessionTimeout();
+
+    /**
+     * get max value of sessions.
+     *
+     * @return max value of sessions
+     */
+    Integer getMaxSessionCount();
 
 }
