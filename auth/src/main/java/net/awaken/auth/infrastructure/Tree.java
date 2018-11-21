@@ -9,7 +9,7 @@ import java.io.Serializable;
  * @version 1.0
  * @since 11.05.2018
  */
-public interface Tree<ID extends Serializable, E extends Node<ID, E>> {
+public interface Tree<ID extends Serializable, E extends TreeNode<ID, E>> {
 
     /**
      * search specified node by id.
@@ -38,13 +38,7 @@ public interface Tree<ID extends Serializable, E extends Node<ID, E>> {
     /**
      * remove this node and cascading subordinates.
      *
-     * @param id node id
-     */
-    void removeCascading(ID id);
-
-    /**
      * @param node node
-     * @see this#removeCascading(Serializable)
      */
     void removeCascading(E node);
 }

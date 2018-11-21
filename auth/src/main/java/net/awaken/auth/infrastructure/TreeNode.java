@@ -10,7 +10,7 @@ import java.util.Set;
  * @version 1.0
  * @since 11.05.2018
  */
-public interface Node<ID extends Serializable, E> {
+public interface TreeNode<ID extends Serializable, E> {
 
     /**
      * the primary key.
