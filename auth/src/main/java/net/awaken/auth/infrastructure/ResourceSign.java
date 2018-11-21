@@ -10,7 +10,7 @@ import java.io.Serializable;
  * @version 1.0
  * @since 11.05.2018
  */
-public interface ResourceId<ID extends Serializable> {
+public interface ResourceSign<ID extends Serializable> {
 
     /**
      * the primary key.
