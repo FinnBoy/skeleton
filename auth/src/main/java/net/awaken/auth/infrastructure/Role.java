@@ -55,6 +55,42 @@ public interface Role extends TreeNode<String, Role> {
     boolean hasPermission(String resource, Integer action);
 
     /**
+     * @param resource resource
+     * @param action   action
+     * @see Resource
+     * @see ResourceAction
+     * @see this#grant(String, Integer)
+     */
+    void grant(Resource resource, ResourceAction action);
+
+    /**
+     * @param resource resource
+     * @param action   action
+     * @see Resource
+     * @see ResourceAction
+     * @see this#revoke(String, Integer)
+     */
+    void revoke(Resource resource, ResourceAction action);
+
+    /**
+     * @param resource resource
+     * @param action   action
+     * @return true if exists.
+     * @see Resource
+     * @see ResourceAction
+     * @see this#hasPermission(String, Integer)
+     */
+    boolean hasPermission(Resource resource, ResourceAction action);
+
+    /**
+     * @param permission permission
+     * @return true if exists.
+     * @see ResourcePermission
+     * @see this#hasPermission(String, Integer)
+     */
+    boolean hasPermission(ResourcePermission permission);
+
+    /**
      * 包含的角色
      * only {@link RoleOption#Dispatcher} role is qualified to contain inclusions.
      *

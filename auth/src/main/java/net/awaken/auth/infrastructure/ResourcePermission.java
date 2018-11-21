@@ -12,10 +12,10 @@ package net.awaken.auth.infrastructure;
 public interface ResourcePermission {
 
     /**
-     * @return action id
+     * @return actions
      * @see ResourceAction
      */
-    Integer getAction();
+    Integer getActions();
 
     /**
      * get resource.
