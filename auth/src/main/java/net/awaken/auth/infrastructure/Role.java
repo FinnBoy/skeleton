@@ -47,14 +47,6 @@ public interface Role extends TreeNode<String, Role> {
     void revoke(String resource, Integer action);
 
     /**
-     * check whether has the permission of resource.
-     *
-     * @param resource resource
-     * @param action   permission action
-     */
-    boolean hasPermission(String resource, Integer action);
-
-    /**
      * @param resource resource
      * @param action   action
      * @see Resource
@@ -71,6 +63,36 @@ public interface Role extends TreeNode<String, Role> {
      * @see this#revoke(String, Integer)
      */
     void revoke(Resource resource, ResourceAction action);
+
+    /**
+     * lock this role.
+     *
+     * @param reason lock reason
+     */
+    void lock(String reason);
+
+    /**
+     * @param role role
+     */
+    void inherit(Role role);
+
+    /**
+     * @param role role
+     */
+    void dependOn(Role role);
+
+    /**
+     * @param role role
+     */
+    void repel(Role role);
+
+    /**
+     * check whether has the permission of resource.
+     *
+     * @param resource resource
+     * @param action   permission action
+     */
+    boolean hasPermission(String resource, Integer action);
 
     /**
      * @param resource resource
@@ -129,13 +151,6 @@ public interface Role extends TreeNode<String, Role> {
      * @return quota
      */
     Integer getQuota();
-
-    /**
-     * lock this role.
-     *
-     * @param reason lock reason
-     */
-    void lock(String reason);
 
     /**
      * whether locked or not.
