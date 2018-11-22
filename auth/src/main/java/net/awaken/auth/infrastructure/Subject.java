@@ -1,15 +1,14 @@
 package net.awaken.auth.infrastructure;
 
-import net.awaken.auth.Node;
-
 /**
  * 主体
+ * <p>the subject interface only pay attention to authorization.</p>
  *
  * @author Finn Zhao
  * @version 1.0
  * @since 11.05.2018
  */
-public interface Subject extends Node<String, Subject> {
+public interface Subject {
 
     /**
      * get account.
@@ -23,7 +22,7 @@ public interface Subject extends Node<String, Subject> {
      *
      * @return privilege
      */
-    Privilege privilege();
+    SubjectPrivilege privilege();
 
     /**
      * get profile.
@@ -33,11 +32,11 @@ public interface Subject extends Node<String, Subject> {
     Profile profile();
 
     /**
-     * delegate someone role.
+     * delegate someone role.(i.e. the "someone" is a mandatary.)
      * 将自己的某项角色特权 临时委托授权给 另个主体
      *
-     * @param another
-     * @param role
+     * @param another mandatary(proxy) subject
+     * @param role    delegated role
      */
     void delegate(Subject another, String role);
 
@@ -45,8 +44,8 @@ public interface Subject extends Node<String, Subject> {
      * cancel delegating someone role.
      * 取消 之前的临时委托
      *
-     * @param another
-     * @param role
+     * @param another mandatary(proxy) subject
+     * @param role    canceled role
      */
     void cancel(Subject another, String role);
 
@@ -54,31 +53,26 @@ public interface Subject extends Node<String, Subject> {
      * grant someone role.
      * 将自己的某项角色特权 授权给 另个主体
      *
-     * @param another
-     * @param role
+     * @param another another subject
+     * @param role    granted role
      */
     void grant(Subject another, String role);
 
     /**
      * revoke someone role.
      *
-     * @param another
-     * @param role
+     * @param another another subject
+     * @param role    revoked role
      */
     void revoke(Subject another, String role);
 
     /**
-     * get sessions' count at present.
+     * verify whether has the permission of this resource.
      *
-     * @return session count
+     * @param resource resource
+     * @param action   permission action
+     * @return true if have permission of this resource, or not.
      */
-    Integer getSessionCount();
-
-    /**
-     * terminate this session
-     *
-     * @param session
-     */
-    void terminate(String session);
+    boolean verify(String resource, Integer action);
 
 }
