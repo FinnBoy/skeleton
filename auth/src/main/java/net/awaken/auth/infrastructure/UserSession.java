@@ -15,7 +15,10 @@ public interface UserSession extends Entry<String> {
 
     /**
      * get principal info.
-     * {@link User} 作为一个账户的抽象，而 principal 是实际的账户信息，同时 credential 作为该实际账户的凭证用于 登录认证。
+     * <p>
+     * {@link User} 作为一个账户的抽象。
+     * 而 principal 是实际的账户信息（可以有多个），同时 credential 作为该实际账户的凭证用于 登录认证。
+     * </p>
      *
      * @return principal info
      */
