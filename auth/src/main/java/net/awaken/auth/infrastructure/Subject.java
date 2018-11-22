@@ -13,9 +13,10 @@ public interface Subject {
     /**
      * get profile.
      *
+     * @param authenticationToken authentication token
      * @return profile
      */
-    SubjectProfile profile();
+    SubjectProfile profile(Object authenticationToken);
 
     /**
      * delegate someone role.(i.e. the "someone" is a mandatary.)

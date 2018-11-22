@@ -19,6 +19,13 @@ public interface User {
     Subject getSubject();
 
     /**
+     * get profile.
+     *
+     * @return profile
+     */
+    SubjectProfile profile();
+
+    /**
      * get sessions' count at present.
      *
      * @return session count

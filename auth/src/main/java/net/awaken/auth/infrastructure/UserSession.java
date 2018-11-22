@@ -21,18 +21,20 @@ public interface UserSession extends Entry<String> {
     User getUser();
 
     /**
-     * get running user.
+     * get running subject.
      *
-     * @return running user
+     * @return running subject
      */
-    User getRunningUser();
+    Subject getRunningSubject();
 
     /**
-     * run as specified user if has the special privilege.
+     * run as specified subject if has the special privilege.
      *
-     * @param user user
+     * @param subject subject
      */
-    void runAs(User user);
+    void runAs(Subject subject);
+
+    void runAs(Subject subject, String role);
 
     /**
      * terminate this session
