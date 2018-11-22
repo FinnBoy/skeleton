@@ -7,7 +7,7 @@ package net.awaken.auth.infrastructure;
  * @version 1.0
  * @since 11.05.2018
  */
-public interface Profile {
+public interface SubjectProfile {
 
     /**
      * get subject.
