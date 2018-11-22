@@ -9,7 +9,7 @@ import java.util.Date;
  * @version 1.0
  * @since 11.05.2018
  */
-public interface Account {
+public interface User {
 
     /**
      * get subject.
@@ -19,11 +19,11 @@ public interface Account {
     Subject getSubject();
 
     /**
-     * TODO:
-     * @param credential
-     * @return true if valid.
+     * get sessions' count at present.
+     *
+     * @return session count
      */
-    boolean authenticate(Object credential);
+    Integer getSessionCount();
 
     /**
      * whether locked or not.
@@ -59,5 +59,20 @@ public interface Account {
      * @return max value of sessions
      */
     Integer getMaxSessionCount();
+
+    /**
+     * TODO: deprecated?
+     *
+     * @param credential credential
+     * @return true if valid.
+     */
+    boolean authenticate(Object credential);
+
+    /**
+     * terminate this session
+     *
+     * @param session
+     */
+    void terminate(String session);
 
 }
