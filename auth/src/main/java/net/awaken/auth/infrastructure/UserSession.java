@@ -14,6 +14,14 @@ import java.util.Date;
 public interface UserSession extends Entry<String> {
 
     /**
+     * get principal info.
+     * {@link User} 作为一个账户的抽象，而 principal 是实际的账户信息，同时 credential 作为该实际账户的凭证用于 登录认证。
+     *
+     * @return principal info
+     */
+    Object getPrincipalInfo();
+
+    /**
      * get actual user which the subject login by.
      *
      * @return user
