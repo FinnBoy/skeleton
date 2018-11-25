@@ -16,6 +16,6 @@ public interface Authenticator {
      * @return User Session
      * @see UserSession
      */
-    UserSession authenticate(Object authenticationToken);
+    UserSession authenticate(AuthenticationToken authenticationToken);
 
 }

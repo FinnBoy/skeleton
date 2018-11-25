@@ -13,15 +13,15 @@ import java.util.Set;
 public interface UserSession extends Entry<String> {
 
     /**
-     * get principal info.
+     * get authentication info.
      * <p>
      * {@link User} 作为一个账户的抽象。
      * 而 principal 是实际的账户信息（可以有多个），同时 credential 作为该实际账户 principal 的凭证用于 登录认证。
      * </p>
      *
-     * @return principal info
+     * @return authentication info
      */
-    Object getPrincipalInfo();
+    AuthenticationInfo getAuthenticationInfo();
 
     /**
      * get actual user which the subject login by.
