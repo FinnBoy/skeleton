@@ -10,14 +10,7 @@ import java.util.Set;
  * @version 1.0
  * @since 11.05.2018
  */
-public interface TreeNode<ID extends Serializable, E> {
-
-    /**
-     * the primary key.
-     *
-     * @return pk
-     */
-    ID identifier();
+public interface TreeNode<ID extends Serializable, E> extends Entry<ID> {
 
     /**
      * returns the level of current node.

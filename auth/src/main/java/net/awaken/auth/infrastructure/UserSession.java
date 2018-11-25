@@ -1,7 +1,5 @@
 package net.awaken.auth.infrastructure;
 
-import net.awaken.auth.Entry;
-
 import java.util.Date;
 
 /**

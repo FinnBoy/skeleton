@@ -1,7 +1,5 @@
 package net.awaken.auth.infrastructure;
 
-import java.io.Serializable;
-
 /**
  * 受保护的
  * <p>实现该接口的类，作为受保护的资源，受到权限管控。</p>
@@ -10,14 +8,7 @@ import java.io.Serializable;
  * @version 1.0
  * @since 11.05.2018
  */
-public interface ResourceSign<ID extends Serializable> {
-
-    /**
-     * the primary key.
-     *
-     * @return pk
-     */
-    ID identifier();
+public interface ResourceSign extends Entry<String> {
 
     /**
      * get resource.
