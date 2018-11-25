@@ -13,8 +13,9 @@ public interface Authenticator {
      * authenticate token.
      *
      * @param authenticationToken token contains principal and credential.
-     * @return User or Session?
+     * @return User Session
+     * @see UserSession
      */
-    Object authenticate(Object authenticationToken);
+    UserSession authenticate(Object authenticationToken);
 
 }

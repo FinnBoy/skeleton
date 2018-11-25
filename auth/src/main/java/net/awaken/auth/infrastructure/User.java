@@ -26,13 +26,6 @@ public interface User {
     SubjectProfile profile();
 
     /**
-     * get sessions' count at present.
-     *
-     * @return session count
-     */
-    Integer getSessionCount();
-
-    /**
      * whether locked or not.
      *
      * @return locked
@@ -51,7 +44,7 @@ public interface User {
      *
      * @return expiry date
      */
-    Date getExpiryDate();
+    Date getExpiryDatetime();
 
     /**
      * get the config~time of the interval of session timeout.
@@ -68,12 +61,11 @@ public interface User {
     Integer getMaxSessionCount();
 
     /**
-     * TODO: deprecated?
+     * get sessions' count at present.
      *
-     * @param credential credential
-     * @return true if valid.
+     * @return session count
      */
-    boolean authenticate(Object credential);
+    Integer getSessionCount();
 
     /**
      * terminate this session
