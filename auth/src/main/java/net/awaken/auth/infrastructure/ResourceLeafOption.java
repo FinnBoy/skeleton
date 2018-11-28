@@ -20,7 +20,7 @@ public enum ResourceLeafOption implements Suitable {
      */
     Service(20),
     /**
-     * DB Data.
+     * DB Data(or just data?).
      * <p>
      * 只要控制权限的表的columns数据，不溢出到其他表上，那么控制起来就很方便。
      * 只要在 sql 上搜索 控制权限的表，在此表上加上 权限控制的条件，并作为 sub query 替换掉该表就可以了。
@@ -32,7 +32,7 @@ public enum ResourceLeafOption implements Suitable {
      * 并且不去关联 customer 表。
      * </p>
      */
-    Data(30);
+    Domain(30);
 
     private Integer state;
 
