@@ -17,6 +17,6 @@ public @interface SupervisedAttribute {
     /**
      * The resource identifier which will be used to check permission.
      */
-    String identifier();
+    String identifier() default "";
 
 }
