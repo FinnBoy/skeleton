@@ -78,14 +78,14 @@ public interface TreeNode<ID extends Serializable, E> extends Entry<ID> {
     void addSubordinate(E node);
 
     /**
-     * move this node includes cascading subordinates to the specified superior.
+     * move this node includes cascading subordinates to the specified node.
      *
      * @param node node
      */
-    void moveToSuperior(E node);
+    void moveTo(E node);
 
     /**
-     * move these subordinates(except this node) to the specified superior.
+     * move these subordinates(except this node) to the specified node.
      *
      * @param node node
      */
