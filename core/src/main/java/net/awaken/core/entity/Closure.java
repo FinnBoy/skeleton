@@ -24,27 +24,27 @@ package net.awaken.core.entity;
  * @version 1.0
  * @since 11.05.2018
  */
-public abstract class Closure extends Entity<Long> {
+public abstract class Closure<E> extends Entity<Long> {
 
-    private Long ancestor;
+    private E ancestor;
 
-    private Long descendant;
+    private E descendant;
 
     private Long distance;
 
-    public Long getAncestor() {
+    public E getAncestor() {
         return ancestor;
     }
 
-    public void setAncestor(Long ancestor) {
+    public void setAncestor(E ancestor) {
         this.ancestor = ancestor;
     }
 
-    public Long getDescendant() {
+    public E getDescendant() {
         return descendant;
     }
 
-    public void setDescendant(Long descendant) {
+    public void setDescendant(E descendant) {
         this.descendant = descendant;
     }
 
