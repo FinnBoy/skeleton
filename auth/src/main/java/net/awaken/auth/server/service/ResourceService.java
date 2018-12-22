@@ -1,11 +1,11 @@
-package net.awaken.auth.server.service.resource;
+package net.awaken.auth.server.service;
 
 import net.awaken.auth.server.entity.resource.Resource;
 
 /**
  * @author Finn Zhao
  * @version 1.0
- * @since 11.05.2018
+ * @since 12.01.2018
  */
 public interface ResourceService {
 
