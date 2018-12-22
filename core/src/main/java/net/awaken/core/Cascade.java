@@ -52,6 +52,6 @@ public interface Cascade<E, ID extends Serializable> {
      * @param subordinateId subordinate Id
      * @return subordinate by id.
      */
-    E getSubordinate(ID subordinateId);
+    E searchSubordinate(ID subordinateId);
 
 }
