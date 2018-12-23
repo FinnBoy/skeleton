@@ -22,7 +22,7 @@ package net.awaken.core.entity;
  *
  * @author Finn Zhao
  * @version 1.0
- * @since 11.05.2018
+ * @since 12.01.2018
  */
 public abstract class Closure<E> extends VersionEntity<Long> {
 

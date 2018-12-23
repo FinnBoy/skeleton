@@ -6,7 +6,7 @@ import java.util.Objects;
 /**
  * @author Finn Zhao
  * @version 1.0
- * @since 11.05.2018(jdk1.7)
+ * @since 12.01.2018(jdk1.7)
  */
 public abstract class Entity<ID extends Serializable> {
 

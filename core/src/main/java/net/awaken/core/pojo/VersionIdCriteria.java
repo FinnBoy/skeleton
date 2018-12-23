@@ -1,4 +1,6 @@
-package net.awaken.core.entity;
+package net.awaken.core.pojo;
+
+import net.awaken.core.entity.Entity;
 
 import java.io.Serializable;
 
@@ -7,7 +9,7 @@ import java.io.Serializable;
  * @version 1.0
  * @since 12.01.2018
  */
-public abstract class VersionEntity<ID extends Serializable> extends Entity<ID> {
+public abstract class VersionIdCriteria<ID extends Serializable> extends Entity<ID> {
 
     private Integer version;
 
