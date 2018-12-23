@@ -3,6 +3,7 @@ package net.awaken.core.dao;
 import net.awaken.core.entity.Entity;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author Finn Zhao
@@ -40,4 +41,10 @@ public interface IdDAO<ID extends Serializable, E extends Entity<ID>> {
      */
     E get(ID id);
 
+    /**
+     * get total entities.
+     *
+     * @return total entities
+     */
+    List<E> total();
 }
