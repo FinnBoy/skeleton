@@ -7,5 +7,7 @@ package net.awaken.auth.server.helper;
  */
 public interface ResourceHelper {
 
+    ResourceInfo get(String identifier);
 
+    ResourceInfo get(Long id);
 }

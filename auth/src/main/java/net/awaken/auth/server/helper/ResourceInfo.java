@@ -1,6 +1,6 @@
-package net.awaken.auth.server.dto;
+package net.awaken.auth.server.helper;
 
-import net.awaken.core.CascadeBase;
+import net.awaken.core.bean.CascadeBase;
 
 import java.util.Set;
 
@@ -10,6 +10,10 @@ import java.util.Set;
  * @since 12.01.2018
  */
 public class ResourceInfo extends CascadeBase<ResourceInfo, String> {
+
+    public ResourceInfo(Set<ResourceInfo> subordinates) {
+        super(subordinates);
+    }
 
     public ResourceInfo(ResourceInfo superior, Set<ResourceInfo> subordinates) {
         super(superior, subordinates);

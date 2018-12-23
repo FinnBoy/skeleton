@@ -1,32 +1,34 @@
-package net.awaken.auth.server.service;
+package net.awaken.auth.server.dao;
+
+import net.awaken.auth.server.entity.resource.Resource;
 
 /**
  * @author Finn Zhao
  * @version 1.0
  * @since 12.01.2018
  */
-public interface ResourceService {
+public interface ResourceDAO {
 
     /**
      * create a resource.
      *
      * @param resource resource
      */
-    void create(ResourceCriteria resource);
+    void create(Resource resource);
 
     /**
      * delete a resource which has not been in resource~tree yet.
      *
      * @param resource resource
      */
-    void delete(ResourceCriteria resource);
+    void delete(Resource resource);
 
     /**
      * remove a resource(includes subordinates) from the resource~tree.
      *
      * @param node resource
      */
-    void remove(ResourceCriteria node);
+    void remove(Resource node);
 
     /**
      * remove a resource to the resource~tree.
@@ -34,14 +36,14 @@ public interface ResourceService {
      * @param superior    superior resource
      * @param subordinate subordinate resource
      */
-    void add(ResourceCriteria superior, ResourceCriteria subordinate);
+    void add(Resource superior, Resource subordinate);
 
     /**
      * remove all of the subordinates from the resource node.
      *
      * @param node resource
      */
-    void clearSubordinates(ResourceCriteria node);
+    void clearSubordinates(Resource node);
 
     /**
      * move the resource node(includes subordinates) to the target superior.
@@ -49,7 +51,7 @@ public interface ResourceService {
      * @param node           resource node
      * @param targetSuperior target superior node
      */
-    void moveNode(ResourceCriteria node, ResourceCriteria targetSuperior);
+    void moveNode(Resource node, Resource targetSuperior);
 
     /**
      * move the resource's subordinates(excludes this resource node) to the target superior.
@@ -57,5 +59,5 @@ public interface ResourceService {
      * @param node           resource node
      * @param targetSuperior target superior node
      */
-    void moveSubordinates(ResourceCriteria node, ResourceCriteria targetSuperior);
+    void moveSubordinates(Resource node, Resource targetSuperior);
 }
