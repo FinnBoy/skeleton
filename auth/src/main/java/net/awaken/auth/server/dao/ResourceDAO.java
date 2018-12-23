@@ -1,27 +1,14 @@
 package net.awaken.auth.server.dao;
 
 import net.awaken.auth.server.entity.resource.Resource;
+import net.awaken.core.dao.BusinessIdDAO;
 
 /**
  * @author Finn Zhao
  * @version 1.0
  * @since 12.01.2018
  */
-public interface ResourceDAO {
-
-    /**
-     * create a resource.
-     *
-     * @param resource resource
-     */
-    void create(Resource resource);
-
-    /**
-     * delete a resource which has not been in resource~tree yet.
-     *
-     * @param resource resource
-     */
-    void delete(Resource resource);
+public interface ResourceDAO extends BusinessIdDAO<Long, String, Resource> {
 
     /**
      * remove a resource(includes subordinates) from the resource~tree.
