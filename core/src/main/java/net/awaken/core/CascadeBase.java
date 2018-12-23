@@ -12,23 +12,40 @@ import java.util.Set;
  */
 public abstract class CascadeBase<E, ID extends Serializable> implements Cascade<E, ID> {
 
+    public CascadeBase(Set<E> subordinates) {
+        this(Optional.empty(), //
+                Collections.unmodifiableSet(subordinates), //
+                Collections.emptySet());
+    }
+
     public CascadeBase(E superior, Set<E> subordinates) {
-        this.superior = Optional.of(superior);
-        this.subordinates = subordinates;
-        this.multiSuperiors = Collections.emptySet();
+        this(Optional.of(superior), //
+                Collections.unmodifiableSet(subordinates), //
+                Collections.emptySet());
     }
 
     public CascadeBase(Set<E> multiSuperiors, Set<E> subordinates) {
-        this.superior = Optional.empty();
-        this.subordinates = subordinates;
-        this.multiSuperiors = multiSuperiors;
+        this(Optional.empty(), //
+                Collections.unmodifiableSet(subordinates), //
+                Collections.unmodifiableSet(multiSuperiors));
     }
 
-    final private Optional<E> superior;
+    protected CascadeBase(Optional<E> superior, Set<E> multiSuperiors, Set<E> subordinates) {
+        this.superior = superior;
+        this.multiSuperiors = multiSuperiors;
+        this.subordinates = subordinates;
+    }
 
-    final private Set<E> subordinates;
+    final protected Optional<E> superior;
 
-    final private Set<E> multiSuperiors;
+    final protected Set<E> subordinates;
+
+    final protected Set<E> multiSuperiors;
+
+    @Override
+    public boolean isRoot() {
+        return !superior.isPresent();
+    }
 
     @Override
     public Set<E> subordinates() {
@@ -57,7 +74,7 @@ public abstract class CascadeBase<E, ID extends Serializable> implements Cascade
 
     @Override
     public E searchSubordinate(ID subordinateId) {
-        throw new UnsupportedOperationException();
+        throw new UnsupportedOperationException("implements it!");
     }
 
 }

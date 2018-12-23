@@ -1,7 +1,6 @@
 package net.awaken.core;
 
 import java.io.Serializable;
-import java.util.Set;
 
 /**
  * @author Finn Zhao
@@ -17,7 +16,4 @@ public interface CascadeExtend<E, ID extends Serializable> extends Cascade<E, ID
      */
     void addSubordinate(E node);
 
-    void setSuperior(E superior);
-
-    void setMultiSuperiors(Set<E> multiSuperiors);
 }

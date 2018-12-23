@@ -11,6 +11,13 @@ import java.util.Set;
 public interface Cascade<E, ID extends Serializable> {
 
     /**
+     * check whether this node is the root(which does not have superior).
+     *
+     * @return true if it's the root.
+     */
+    boolean isRoot();
+
+    /**
      * get subordinate groups.
      *
      * @return subordinates
