@@ -1,13 +1,13 @@
 package net.awaken.auth.server.entity.resource;
 
-import net.awaken.core.entity.Entity;
+import net.awaken.core.entity.VersionEntity;
 
 /**
  * @author Finn Zhao
  * @version 1.0
  * @since 11.05.2018
  */
-public class ResourceTypeAction extends Entity<Long> {
+public class ResourceTypeAction extends VersionEntity<Long> {
 
     private ResourceType type;
 
