@@ -1,6 +1,7 @@
 package net.awaken.core.entity;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * @author Finn Zhao
@@ -17,5 +18,20 @@ public abstract class BusinessEntity<ID extends Serializable, BusinessId extends
 
     public void setBusinessId(BusinessId businessId) {
         this.businessId = businessId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o)
+            return true;
+        if (!(o instanceof BusinessEntity))
+            return false;
+        BusinessEntity<?, ?> entity = (BusinessEntity<?, ?>) o;
+        return Objects.equals(businessId, entity.businessId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(businessId);
     }
 }
