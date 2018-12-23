@@ -1,6 +1,6 @@
 package net.awaken.auth.server.entity.resource;
 
-import net.awaken.core.entity.VersionEntity;
+import net.awaken.core.entity.BusinessVersionEntity;
 
 /**
  * 资源信息（描述类某个资源的信息，同时被配置的资源意味着受权限管控）
@@ -9,21 +9,11 @@ import net.awaken.core.entity.VersionEntity;
  * @version 1.0
  * @since 11.05.2018
  */
-public class Resource extends VersionEntity<Long> {
-
-    private String identifier;
+public class Resource extends BusinessVersionEntity<Long, String> {
 
     private String name;
 
     private ResourceType type;
-
-    public String getIdentifier() {
-        return identifier;
-    }
-
-    public void setIdentifier(String identifier) {
-        this.identifier = identifier;
-    }
 
     public String getName() {
         return name;
