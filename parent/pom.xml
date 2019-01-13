@@ -24,6 +24,9 @@
           -->
         <lib.version.disruptor>3.4.2</lib.version.disruptor>
 
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Cache Lib ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <lib.version.ehcache.1>1.2.3</lib.version.ehcache.1>
+
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Web Server ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <lib.version.tomcat>7.0.59</lib.version.tomcat>
         <lib.version.tomcat.embed>7.0.59</lib.version.tomcat.embed>
@@ -104,6 +107,13 @@
 
     <dependencyManagement>
         <dependencies>
+
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Cache Lib ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <dependency>
+                <groupId>net.sf.ehcache</groupId>
+                <artifactId>ehcache</artifactId>
+                <version>${lib.version.ehcache.1}</version>
+            </dependency>
 
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Network Frame ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <dependency>
