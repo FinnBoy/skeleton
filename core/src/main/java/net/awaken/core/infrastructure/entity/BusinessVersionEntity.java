@@ -1,4 +1,4 @@
-package net.awaken.core.entity;
+package net.awaken.core.infrastructure.entity;
 
 import java.io.Serializable;
 

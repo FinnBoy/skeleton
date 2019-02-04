@@ -1,4 +1,6 @@
-package net.awaken.core.entity;
+package net.awaken.core.infrastructure.entity;
+
+import net.awaken.core.infrastructure.network.db.Entity;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -8,7 +10,7 @@ import java.util.Objects;
  * @version 1.0
  * @since 12.01.2018(jdk1.7)
  */
-public abstract class Entity<ID extends Serializable> {
+public abstract class BaseEntity<ID extends Serializable> implements Entity<ID> {
 
     private ID id;
 
@@ -24,9 +26,9 @@ public abstract class Entity<ID extends Serializable> {
     public boolean equals(Object o) {
         if (this == o)
             return true;
-        if (!(o instanceof Entity))
+        if (!(o instanceof BaseEntity))
             return false;
-        Entity<?> entity = (Entity<?>) o;
+        BaseEntity<?> entity = (BaseEntity<?>) o;
         return Objects.equals(id, entity.id);
     }
 

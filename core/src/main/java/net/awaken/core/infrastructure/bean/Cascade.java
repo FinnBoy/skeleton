@@ -1,4 +1,4 @@
-package net.awaken.core.bean;
+package net.awaken.core.infrastructure.bean;
 
 import java.io.Serializable;
 import java.util.Set;

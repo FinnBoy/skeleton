@@ -1,4 +1,4 @@
-package net.awaken.core.entity;
+package net.awaken.core.infrastructure.entity;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -8,7 +8,7 @@ import java.util.Objects;
  * @version 1.0
  * @since 12.01.2018
  */
-public abstract class BusinessEntity<ID extends Serializable, BusinessId extends Serializable> extends Entity<ID> {
+public abstract class BusinessEntity<ID extends Serializable, BusinessId extends Serializable> extends BaseEntity<ID> {
 
     private BusinessId businessId;
 
