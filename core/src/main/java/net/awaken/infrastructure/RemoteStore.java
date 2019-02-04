@@ -1,23 +1,17 @@
 package net.awaken.infrastructure;
 
-import java.util.Set;
-
+/**
+ * Common Data Access API
+ *
+ * @param <Req>
+ * @param <Resp>
+ * @author Finn Zhao
+ * @version 1.0
+ * @since 2019.02.01
+ */
 public interface RemoteStore<Req extends Request, Resp extends Response> {
 
-    void push(StoreOption option, Req request);
+    Message<Resp> call(Req request);
 
-    Resp pull(StoreOption option, Req request);
-
-    void rpcPush(Integer rpcOption, Req request);
-
-    Resp rpcPull(Integer rpcOption, Req request);
-
-    Set<Store> getStores();
-
-    Set<RpcStore> getRpcStores();
-
-    Store getStore(StoreOption option);
-
-    RpcStore getRpcStore(Integer rpcOption);
-
+    StoreOption getOption();
 }
