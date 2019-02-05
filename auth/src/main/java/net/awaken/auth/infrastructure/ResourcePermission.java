@@ -15,7 +15,7 @@ public interface ResourcePermission {
      * @return actions
      * @see ResourceAction
      */
-    Integer getActions();
+    int getActions();
 
     /**
      * get resource.
