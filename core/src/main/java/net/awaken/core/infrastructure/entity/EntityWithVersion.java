@@ -7,7 +7,7 @@ import java.io.Serializable;
  * @version 1.0
  * @since 12.01.2018
  */
-public abstract class BusinessVersionEntity<ID extends Serializable, BusinessId extends Serializable> extends BusinessEntity<ID, BusinessId> {
+public abstract class EntityWithVersion<ID extends Serializable> extends EntityBase<ID> {
 
     private Integer version;
 

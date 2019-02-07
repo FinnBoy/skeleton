@@ -1,6 +1,6 @@
-package net.awaken.core.dao;
+package net.awaken.core.infrastructure.dao;
 
-import net.awaken.core.entity.Entity;
+import net.awaken.core.infrastructure.entity.EntityBase;
 
 import java.io.Serializable;
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
  * @version 1.0
  * @since 12.01.2018
  */
-public interface IdDAO<ID extends Serializable, E extends Entity<ID>> {
+public interface IdDAO<ID extends Serializable, E extends EntityBase<ID>> {
 
     /**
      * create a new entity.

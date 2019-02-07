@@ -10,7 +10,7 @@ import java.util.Objects;
  * @version 1.0
  * @since 12.01.2018(jdk1.7)
  */
-public abstract class BaseEntity<ID extends Serializable> implements Entity<ID> {
+public abstract class EntityBase<ID extends Serializable> implements Entity<ID>, IUniqueKeySupport {
 
     private ID id;
 
@@ -26,14 +26,19 @@ public abstract class BaseEntity<ID extends Serializable> implements Entity<ID> 
     public boolean equals(Object o) {
         if (this == o)
             return true;
-        if (!(o instanceof BaseEntity))
+        if (!(o instanceof EntityBase))
             return false;
-        BaseEntity<?> entity = (BaseEntity<?>) o;
-        return Objects.equals(id, entity.id);
+        EntityBase<?> entity = (EntityBase<?>) o;
+        return Objects.equals(getUniqueKey(), entity.getUniqueKey());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id);
+        return Objects.hash(getUniqueKey());
+    }
+
+    @Override
+    public Serializable getUniqueKey() {
+        return this.id;
     }
 }

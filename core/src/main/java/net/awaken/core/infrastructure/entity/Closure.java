@@ -24,7 +24,7 @@ package net.awaken.core.infrastructure.entity;
  * @version 1.0
  * @since 12.01.2018
  */
-public abstract class Closure<E> extends VersionEntity<Long> {
+public abstract class Closure<E> extends EntityWithVersion<Long> {
 
     private E ancestor;
 
