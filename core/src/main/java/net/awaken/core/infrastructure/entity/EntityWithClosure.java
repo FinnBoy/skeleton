@@ -1,7 +1,7 @@
 package net.awaken.core.infrastructure.entity;
 
 /**
- * Closure Data.
+ * EntityWithClosure Data.
  * <p>
  * Ancestor 代表祖先节点
  * Descendant 代表后代节点
@@ -24,7 +24,7 @@ package net.awaken.core.infrastructure.entity;
  * @version 1.0
  * @since 12.01.2018
  */
-public abstract class Closure<E> extends EntityWithVersion<Long> {
+public abstract class EntityWithClosure<E> extends EntityWithVersion<Long> {
 
     private E ancestor;
 
