@@ -32,6 +32,8 @@ public class Role extends EntityWithEntryPair<String, String> {
 
     /**
      * role type: Dispatcher（角色分发） or Executor（业务执行）.
+     *
+     * @see RoleOption
      */
     private Integer type;
 
