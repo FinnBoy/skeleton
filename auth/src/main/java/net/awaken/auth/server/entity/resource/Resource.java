@@ -1,6 +1,6 @@
 package net.awaken.auth.server.entity.resource;
 
-import net.awaken.core.entity.BusinessVersionEntity;
+import net.awaken.core.infrastructure.entity.EntityWithEntryPair;
 
 /**
  * 资源信息（描述类某个资源的信息，同时被配置的资源意味着受权限管控）
@@ -9,19 +9,9 @@ import net.awaken.core.entity.BusinessVersionEntity;
  * @version 1.0
  * @since 11.05.2018
  */
-public class Resource extends BusinessVersionEntity<Long, String> {
-
-    private String name;
+public class Resource extends EntityWithEntryPair<String, String> {
 
     private ResourceType type;
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public ResourceType getType() {
         return type;
@@ -30,4 +20,5 @@ public class Resource extends BusinessVersionEntity<Long, String> {
     public void setType(ResourceType type) {
         this.type = type;
     }
+
 }

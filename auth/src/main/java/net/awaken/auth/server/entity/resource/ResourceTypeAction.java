@@ -1,17 +1,15 @@
 package net.awaken.auth.server.entity.resource;
 
-import net.awaken.core.entity.VersionEntity;
+import net.awaken.core.infrastructure.entity.EntityWithEntryPair;
 
 /**
  * @author Finn Zhao
  * @version 1.0
  * @since 11.05.2018
  */
-public class ResourceTypeAction extends VersionEntity<Long> {
+public class ResourceTypeAction extends EntityWithEntryPair<String, String> {
 
     private ResourceType type;
-
-    private String operation;
 
     public ResourceType getType() {
         return type;
@@ -21,11 +19,4 @@ public class ResourceTypeAction extends VersionEntity<Long> {
         this.type = type;
     }
 
-    public String getOperation() {
-        return operation;
-    }
-
-    public void setOperation(String operation) {
-        this.operation = operation;
-    }
 }

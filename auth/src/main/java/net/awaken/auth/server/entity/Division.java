@@ -1,6 +1,6 @@
 package net.awaken.auth.server.entity;
 
-import net.awaken.core.entity.Entity;
+import net.awaken.core.infrastructure.entity.EntityWithAction;
 
 /**
  * 区分表
@@ -9,7 +9,7 @@ import net.awaken.core.entity.Entity;
  * @version 1.0
  * @since 11.05.2018
  */
-public class Division extends Entity<Long> {
+public class Division extends EntityWithAction<Long> {
 
     private String category;
 
