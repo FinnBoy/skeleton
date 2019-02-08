@@ -18,7 +18,7 @@ import java.util.List;
  * 能访问或配置 多少个 或 多大范围的资源容器，由 SuperAdmin 分配。
  * </p>
  * <p>
- * Dispatcher 角色与 Executor 角色互斥，不能同时拥有。
+ * Dispatcher 角色与 Executor 角色互斥，不能同时拥有（可选、根据业务需求、非必须）。
  * </p>
  * <p>
  * Executor 角色又分为 原子角色（atomic） 和 容器角色（container），一个容器角色可以包含多个原子角色
