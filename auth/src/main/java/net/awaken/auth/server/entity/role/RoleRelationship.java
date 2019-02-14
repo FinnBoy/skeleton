@@ -15,7 +15,11 @@ public class RoleRelationship extends EntityWithAction<Long> {
     private Role subject;
 
     /**
-     * 谓语：inherit、dependOn、repel、contain
+     * 谓语：
+     * - inherit（继承）  <br>
+     * - dependOn（依赖）  <br>
+     * - repel（排斥）  <br>
+     * - contain（包含）  <br>
      */
     private Integer predicate;
 

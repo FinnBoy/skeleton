@@ -7,21 +7,22 @@ import net.awaken.auth.infrastructure.Suitable;
  *
  * @author Finn Zhao
  * @version 1.0
+ * @see RoleOption
  * @since 11.05.2018
  */
-public enum RoleOption implements Suitable {
+public enum NormalRoleOption implements Suitable {
     /**
-     * 管理员角色
+     * 容器角色
      */
-    ADMIN(100),
+    Container(210),
     /**
-     * 标准角色
+     * 原子角色
      */
-    NORMAL(200);
+    Atomic(220);
 
     private Integer state;
 
-    private RoleOption(Integer state) {
+    private NormalRoleOption(Integer state) {
         this.state = state;
     }
 
