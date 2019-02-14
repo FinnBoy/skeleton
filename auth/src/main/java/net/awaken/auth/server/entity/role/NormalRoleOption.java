@@ -3,7 +3,7 @@ package net.awaken.auth.server.entity.role;
 import net.awaken.auth.infrastructure.Suitable;
 
 /**
- * 角色选项
+ * 标准角色选项
  *
  * @author Finn Zhao
  * @version 1.0

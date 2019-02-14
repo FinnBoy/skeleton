@@ -3,7 +3,7 @@ package net.awaken.auth.server.entity.role;
 import net.awaken.auth.infrastructure.Suitable;
 
 /**
- * 分发/调度角色选项
+ * 管理员角色选项
  *
  * @author Finn Zhao
  * @version 1.0
@@ -19,7 +19,7 @@ public enum AdminRoleOption implements Suitable {
      */
     SUPER_ADMIN(1),
     /**
-     * 业务角色的定义与创建
+     * 标准角色的定义与创建，以及角色之间的关系配置
      * <p>
      * 可将指定的标准角色（授权/撤回）分配给<br>
      * 1. {@link AdminRoleOption#PERMISSION_ALLOCATION}<br>
