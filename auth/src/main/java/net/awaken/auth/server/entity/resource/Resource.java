@@ -13,6 +13,19 @@ public class Resource extends EntityWithEntryPair<String, String> {
 
     private ResourceType type;
 
+    /**
+     * 报废标记
+     */
+    private Boolean scrappedFlag;
+
+    public Boolean getScrappedFlag() {
+        return scrappedFlag;
+    }
+
+    public void setScrappedFlag(Boolean scrappedFlag) {
+        this.scrappedFlag = scrappedFlag;
+    }
+
     public ResourceType getType() {
         return type;
     }
