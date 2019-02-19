@@ -19,6 +19,8 @@ public class ActionInfo {
 
     private String lastModifiedBy;
 
+    private Boolean scrapped;
+
     public Date getCreatedDate() {
         return createdDate;
     }
@@ -49,5 +51,13 @@ public class ActionInfo {
 
     public void setLastModifiedBy(String lastModifiedBy) {
         this.lastModifiedBy = lastModifiedBy;
+    }
+
+    public Boolean getScrapped() {
+        return scrapped;
+    }
+
+    public void setScrapped(Boolean scrapped) {
+        this.scrapped = scrapped;
     }
 }
