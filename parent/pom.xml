@@ -24,6 +24,9 @@
           -->
         <lib.version.disruptor>3.4.2</lib.version.disruptor>
 
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Java EE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <lib.version.servlet.api>3.1.0</lib.version.servlet.api>
+
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Cache Lib ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
         <lib.version.ehcache.1>1.2.3</lib.version.ehcache.1>
 
@@ -107,6 +110,14 @@
 
     <dependencyManagement>
         <dependencies>
+
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Java EE ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${lib.version.servlet.api}</version>
+                <scope>provided</scope>
+            </dependency>
 
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Cache Lib ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <dependency>
