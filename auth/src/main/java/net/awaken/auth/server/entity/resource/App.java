@@ -11,6 +11,10 @@ import java.util.Set;
  * 这时对该{@link App}资源的访问权限、以及操作权限，就意味着登录用户被授予了管理员角色权限、能配置其他用户的各种资源权限管控。<br>
  * 在<b>权限管理与维护{@link App}</b>上展示：所有可配置资源的树状结构，登录用户可自行在自己权限范围内配置
  * </p>
+ * <p>
+ * 应用权限{@link net.awaken.auth.server.entity.ResourceTypeAction}：
+ * 1、登录
+ * </p>
  *
  * @author Finn Zhao
  * @version 1.0

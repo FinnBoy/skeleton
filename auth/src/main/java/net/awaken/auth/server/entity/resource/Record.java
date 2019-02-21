@@ -4,6 +4,10 @@ import net.awaken.auth.server.entity.Resource;
 
 /**
  * 数据表上的一条记录
+ * <p>
+ * 记录权限{@link net.awaken.auth.server.entity.ResourceTypeAction}：
+ * 1、释放（查询/使用）限制
+ * </p>
  *
  * @author Finn Zhao
  * @version 1.0

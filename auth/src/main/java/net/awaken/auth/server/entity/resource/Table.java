@@ -6,6 +6,10 @@ import java.util.Set;
 
 /**
  * 数据表
+ * <p>
+ * 数据表权限{@link net.awaken.auth.server.entity.ResourceTypeAction}：
+ * 1、限制使用/查询
+ * </p>
  *
  * @author Finn Zhao
  * @version 1.0

@@ -6,6 +6,10 @@ import java.util.Set;
 
 /**
  * 菜单
+ * <p>
+ * 菜单权限{@link net.awaken.auth.server.entity.ResourceTypeAction}：
+ * 1、显示（菜单）
+ * </p>
  *
  * @author Finn Zhao
  * @version 1.0

@@ -4,6 +4,11 @@ import net.awaken.auth.server.entity.Resource;
 
 /**
  * 文档
+ * <p>
+ * 文档权限{@link net.awaken.auth.server.entity.ResourceTypeAction}：
+ * 1、在线观看
+ * 2、可下载
+ * </p>
  *
  * @author Finn Zhao
  * @version 1.0

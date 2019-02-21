@@ -6,6 +6,10 @@ import java.util.Set;
 
 /**
  * 页面
+ * <p>
+ * 页面权限{@link net.awaken.auth.server.entity.ResourceTypeAction}：
+ * 1、访问
+ * </p>
  *
  * @author Finn Zhao
  * @version 1.0
