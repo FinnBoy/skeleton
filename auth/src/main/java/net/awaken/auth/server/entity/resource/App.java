@@ -26,6 +26,8 @@ public class App extends Resource {
 
     private Set<Service> services;
 
+    private Set<Table> tables;
+
     public Module getModule() {
         return module;
     }
@@ -57,4 +59,13 @@ public class App extends Resource {
     public void setServices(Set<Service> services) {
         this.services = services;
     }
+
+    public Set<Table> getTables() {
+        return tables;
+    }
+
+    public void setTables(Set<Table> tables) {
+        this.tables = tables;
+    }
+
 }
