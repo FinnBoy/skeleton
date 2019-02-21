@@ -46,6 +46,7 @@
         <lib.version.osworkflow>2.7.0</lib.version.osworkflow>
 
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ORM Frame ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+        <lib.version.hibernate.5>5.4.1.Final</lib.version.hibernate.5>
         <lib.version.hibernate.4>4.2.21.Final</lib.version.hibernate.4>
         <lib.version.hibernate.3>3.3.2.GA</lib.version.hibernate.3>
         <lib.version.hibernate.2>2.1.8</lib.version.hibernate.2>
@@ -284,13 +285,30 @@
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-core</artifactId>
-                <version>${lib.version.hibernate.4}</version>
+                <version>${lib.version.hibernate.5}</version>
             </dependency>
             <dependency>
                 <groupId>org.hibernate</groupId>
                 <artifactId>hibernate-entitymanager</artifactId>
-                <version>${lib.version.hibernate.4}</version>
+                <version>${lib.version.hibernate.5}</version>
             </dependency>
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-ehcache</artifactId>
+                <version>${lib.version.hibernate.5}</version>
+            </dependency>
+            <!-- hikaricp connection pool -->
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-hikaricp</artifactId>
+                <version>${lib.version.hibernate.5}</version>
+            </dependency>
+            <!-- c3p0 connection pool --><!--
+            <dependency>
+                <groupId>org.hibernate</groupId>
+                <artifactId>hibernate-c3p0</artifactId>
+                <version>${lib.version.hibernate.4}</version>
+            </dependency>-->
 
             <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ IoC Frame ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
             <dependency>
