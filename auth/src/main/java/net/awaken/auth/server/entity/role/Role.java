@@ -1,6 +1,6 @@
 package net.awaken.auth.server.entity.role;
 
-import net.awaken.auth.server.entity.permission.Permission;
+import net.awaken.auth.server.entity.Permission;
 import net.awaken.core.infrastructure.entity.EntityWithEntryPair;
 
 import java.util.List;

@@ -1,4 +1,4 @@
-package net.awaken.auth.server.entity.resource;
+package net.awaken.auth.server.entity;
 
 import net.awaken.core.infrastructure.entity.EntityWithAction;
 
@@ -11,7 +11,7 @@ import net.awaken.core.infrastructure.entity.EntityWithAction;
  * @version 1.0
  * @since 11.05.2018
  */
-public class ResourcePermission extends EntityWithAction<Long> {
+public class Permission extends EntityWithAction<Long> {
 
     private Resource resource;
 
@@ -32,4 +32,5 @@ public class ResourcePermission extends EntityWithAction<Long> {
     public void setAction(ResourceTypeAction action) {
         this.action = action;
     }
+
 }
